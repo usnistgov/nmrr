@@ -1,0 +1,1 @@
+var tilesGetUrl = "{% url 'nmrr_home_tiles' %}";
