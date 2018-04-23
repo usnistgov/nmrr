@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
     <link rel="stylesheet" href="{% static 'css/extra.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/banner.css' %}" />
     <link rel="stylesheet" href="{% static 'css/btn_custom.css' %}" />
 
     {% if DISPLAY_NIST_HEADERS %}
@@ -41,8 +42,13 @@
     <div id="page-wrapper">
         {# Page header #}
         <div id="header">
-            {% include 'theme/banner.html' %}
             {% include 'theme/menu.html' %}
+            {% url 'core_main_app_homepage' as homepage_url %}
+            {% if homepage_url == request.path %}
+                {% include 'theme/banner.html' with subtitle=True %}
+            {% else %}
+                {% include 'theme/banner.html' with subtitle=False %}
+            {% endif %}
         </div>
 
         <div id="content" class="container-fluid">

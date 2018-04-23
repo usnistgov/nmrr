@@ -1,4 +1,10 @@
 <header>
-    <h1 id="logo">Materials Resource Registry</h1>
-    <p>Part of the <strong>Material Genome Initiative</strong></p>
+    <h1>Materials Resource Registry</h1>
+    {% if subtitle %}
+        <p>Part of the <strong>Materials Genome Initiative</strong></p>
+        <div id="banner_buttons">
+            <a href="{% url 'core_explore_keyword_app_search' %}" class="button" id="search">SEARCH FOR RESOURCES</a>
+            <a href="{% url 'core_curate_index' %}" class="button" id="add">ADD YOUR RESOURCE</a>
+        </div>
+    {% endif %}
 </header>

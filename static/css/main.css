@@ -2337,39 +2337,37 @@
 	#header {
 		text-align: center;
 		/*padding: 1em 0 0 0;*/
-		background-color: #ccc;
+		background-color: black;
 		background-image: url("../img/graphy.png");
 		background-position: top left;
+		background-blend-mode: difference;
 		background-size: 3em 6em;
 		background-repeat: repeat;
 	}
 
 			#header header {
 				text-align: center;
-				/*margin: 0 0 2em 0;*/
 				padding-left: 2em;
 				padding-right: 2em;
 			}
 
 				#header header h1 {
+				    color: white;
 					font-size: 2.25em;
 					margin-bottom: 0.5em;
 				}
 
 				#header header p {
                     position: relative;
-                    border-top: solid 1px #858585;
-                    padding: 0.5em 0;
-                    margin: 0;
                     top: -0.5em;
 
-					font-size: 1.5em;
+					font-size: 1em;
 					color: rgb(190, 120, 40);
 				}
 
 	#nav {
 		cursor: default;
-		background-color: #333;
+		background-color: #a5d1ed;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("../img/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("../img/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("../img/bg01.png");
@@ -2400,14 +2398,13 @@
 
                 /* Added by NIST */
 			    #nav > ul > li > a:not(.btn-custom) {
-					color: #999/*#c0c0c0*/;
+					color: black;
 				}
 
 				#nav > ul > li a {
 					text-decoration: none;
 					border: 0;
 					display: block;
-					/*padding: 1.5em 0.5em 1.35em 0.5em;*/
 					padding: 1em 0.5em;
 					margin: 0.25em 0;
 				}
@@ -2417,7 +2414,8 @@
 				}
 
 				#nav > ul > li:hover a {
-					color: #fff;
+					color: black;
+					font-weight: 600;
 				}
 
 				#nav > ul > li.current {
@@ -2461,7 +2459,7 @@
 /* Dropotron */
 
 	.dropotron {
-		background-color: #333;
+		background-color: #a5d1ed;/*#333;*/
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
@@ -2480,19 +2478,24 @@
 		}
 
 			.dropotron > li > a {
-				color: #999/*#c0c0c0*/;
+				color: black;
 				text-decoration: none;
 				border: 0;
 			    margin: 0 0.6em 0 0.5em; /* modified by NIST */
 			    padding: 0 0.5em;
 			}
 
-			.dropotron > li.active > a, .dropotron > li:hover > a {
-				color: #fff;
+			.dropotron > li.active > a {
+				color: black;
 				/* Added by NIST */
 				background-color: rgb(190, 120, 40);
                 border-radius: 5px;
 			}
+
+			.dropotron > li:hover > a {
+                color: black;
+                font-weight: 600;
+            }
 
 		.dropotron.level-0 {
 			border-radius: 0 0 5px 5px;

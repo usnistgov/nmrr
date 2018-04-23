@@ -24,11 +24,11 @@
 }
 
 .nist-footer {
-    color: white;
+    color: black;
     float: left;
     width: 100%;
     border-width: 0;
-    background: #333333;
+    background: #e0e0e0;
     padding: 1rem;
     position: relative;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -38,7 +38,7 @@
 .nist-footer a {
     text-decoration: none;
     border: none;
-    color: white;
+    color: black;
 }
 
 .nist-footer a:hover {
