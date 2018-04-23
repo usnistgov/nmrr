@@ -1,6 +1,5 @@
 core_curate_app==1.0.0-beta1
 core_dashboard_app==1.0.0-beta1
-core_explore_example_app==1.0.0-beta1
 core_explore_keyword_app==1.0.0-beta1
 core_explore_oaipmh_app==1.0.0-beta1
 core_exporters_app==1.0.0-beta1
