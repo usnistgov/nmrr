@@ -1,8 +1,8 @@
-core_curate_app==1.0.0-beta1
-core_dashboard_app==1.0.0-beta1
-core_explore_keyword_app==1.0.0-beta1
-core_explore_oaipmh_app==1.0.0-beta1
-core_exporters_app==1.0.0-beta1
-core_oaipmh_provider_app==1.0.0-beta1
-core_website_app==1.0.0-beta1
-core_module_blob_host_app==1.0.0-beta1
+core_curate_app==1.0.0-beta2
+core_dashboard_app==1.0.0-beta2
+core_explore_keyword_app==1.0.0-beta2
+core_explore_oaipmh_app==1.0.0-beta2
+core_exporters_app==1.0.0-beta2
+core_oaipmh_provider_app==1.0.0-beta2
+core_website_app==1.0.0-beta2
+core_module_blob_host_app==1.0.0-beta2
