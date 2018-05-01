@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 from mongoengine.connection import connect
+
+from core_main_registry_app import constants
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -24,6 +26,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 MENU_SELECT_PARENTS = False
+
+REGISTRY_XSD_FILENAME = constants.NMRR_XSD_FILENAME
+""" str: Registry xsd filename used for the initialisation.
+"""
 
 # Application definition
 
