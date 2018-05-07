@@ -66,7 +66,8 @@ INSTALLED_APPS = (
     "core_explore_common_app",
     "core_explore_oaipmh_app",
     "core_explore_keyword_app",
-    "core_dashboard_app",
+    "core_dashboard_common_app",
+    "core_dashboard_registry_app",
 
     # Local apps
     "nmrr_home"

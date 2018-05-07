@@ -1,6 +1,6 @@
 core_main_registry_app==1.0.0-alpha1
 core_curate_app==1.0.0-beta2
-core_dashboard_app==1.0.0-beta2
+core_dashboard_registry_app==1.0.0-alpha1
 core_explore_keyword_app==1.0.0-beta2
 core_explore_oaipmh_app==1.0.0-beta3
 core_exporters_app==1.0.0-beta2
