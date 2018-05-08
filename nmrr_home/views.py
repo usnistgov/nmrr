@@ -16,42 +16,67 @@ def tiles(request):
     }
 
     if "core_explore_keyword_app" in installed_apps:
-        explore_keywords_tile = {
-            "logo": "fa-search",
-            "link":  reverse("core_explore_keyword_app_search"),
-            "title": "Search for resources",
-            "text": "Click here to explore the Registry using keywords."
+        # TODO: Change URLs once refinements are developed
+        keyword_url = reverse("core_explore_keyword_app_search")
+
+        organizations_tile = {
+            "logo": "fa-university",
+            "color": "#2CAAE2",
+            "link":  keyword_url,
+            "title": "Organizations",
+            "text": "Click here to explore the Organizations."
         }
 
-        context["tiles"].append(explore_keywords_tile)
+        context["tiles"].append(organizations_tile)
 
-    if "core_curate_app" in installed_apps:
-        curate_tile = {
-            "logo": "fa-edit",
-            "link": reverse("core_curate_index"),
-            "title": "Add your resource",
-            "text": "Click here to add a new Resource to the Registry."
+        data_collections_tile = {
+            "logo": "fa-table",
+            "color": "#A1C057",
+            "link": keyword_url,
+            "title": "Data Collections",
+            "text": "Click here to explore the Data Collections."
         }
 
-        context["tiles"].append(curate_tile)
+        context["tiles"].append(data_collections_tile)
 
-    if not request.user.is_authenticated():
-        login_tile = {
-            "logo": "fa-sign-in",
-            "link": reverse("core_main_app_login"),
-            "title": "Login",
-            "text": "Click here to login to the Registry."
+        datasets_tile = {
+            "logo": "fa-database",
+            "color": "grey",
+            "link": keyword_url,
+            "title": "Datasets",
+            "text": "Click here to explore the Datasets."
         }
 
-        context["tiles"].append(login_tile)
-    else:
-        logout_tile = {
-            "logo": "fa-sign-out",
-            "link": reverse("core_main_app_logout"),
-            "title": "Logout",
-            "text": "Click here to logout from the Registry."
+        context["tiles"].append(datasets_tile)
+
+        services_tile = {
+            "logo": "fa-cogs",
+            "color": "#EBB057;",
+            "link": keyword_url,
+            "title": "Services",
+            "text": "Click here to explore the Services."
         }
 
-        context["tiles"].append(logout_tile)
+        context["tiles"].append(services_tile)
+
+        informational_tile = {
+            "logo": "fa-laptop",
+            "color": "#257ABC;",
+            "link": keyword_url,
+            "title": "Informational Sites",
+            "text": "Click here to explore the Informational Sites."
+        }
+
+        context["tiles"].append(informational_tile)
+
+        software_tile = {
+            "logo": "fa-tachometer",
+            "color": "#79B320;",
+            "link": keyword_url,
+            "title": "Software",
+            "text": "Click here to explore the Software."
+        }
+
+        context["tiles"].append(software_tile)
 
     return render(request, "nmrr_home/tiles.html", context)
