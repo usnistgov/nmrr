@@ -1,16 +1,4 @@
-#banner_buttons {
+#banner_sub {
     position: relative;
     top: -1.2em;
-}
-
-#banner_buttons > a {
-    text-decoration: none;
-}
-
-#banner_buttons #search {
-    background-color: #a5d1ed;
-}
-
-#banner_buttons #add {
-    background-color: #999;
 }

@@ -2,9 +2,10 @@
     <h1>Materials Resource Registry</h1>
     {% if subtitle %}
         <p>Part of the <strong>Materials Genome Initiative</strong></p>
-        <div id="banner_buttons">
-            <a href="{% url 'core_explore_keyword_app_search' %}" class="button" id="search">SEARCH FOR RESOURCES</a>
-            <a href="{% url 'core_curate_index' %}" class="button" id="add">ADD YOUR RESOURCE</a>
-        </div>
+        {% if 'core_explore_keyword_app' in INSTALLED_APPS %}
+            <div id="banner_sub">
+                {% include 'theme/search_bar.html'%}
+            </div>
+        {% endif %}
     {% endif %}
 </header>
