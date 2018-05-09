@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^exporter/', include("core_exporters_app.urls")),
     url(r'^explore/common/', include("core_explore_common_app.urls")),
     url(r'^explore/example/', include("core_explore_example_app.urls")),
-    url(r'^explore/keyword/', include("core_explore_keyword_app.urls")),
+    url(r'^explore/keyword/', include("core_explore_keyword_registry_app.urls")),
     url(r'^oaipmh_search/', include("core_explore_oaipmh_app.urls")),
     url(r'^dashboard/', include("core_dashboard_registry_app.urls")),
     url(r'^oai_pmh/', include("core_oaipmh_harvester_app.urls")),

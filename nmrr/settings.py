@@ -62,9 +62,10 @@ INSTALLED_APPS = (
     "core_parser_app",
     "core_parser_app.tools.modules",  # FIXME: make modules an app
     "core_parser_app.tools.parser",  # FIXME: make parser an app
+    "core_explore_keyword_registry_app",  # /!\ Should always be before core_explore_common_app
+    "core_explore_keyword_app",
     "core_explore_common_app",
     "core_explore_oaipmh_app",
-    "core_explore_keyword_app",
     "core_dashboard_common_app",
     "core_dashboard_registry_app",
 
