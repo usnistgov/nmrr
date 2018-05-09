@@ -44,6 +44,8 @@
                 {% if user.is_staff %}
                 <li><a href="{% url 'admin:core_main_app_admin_home' %}">Administration</a></li>
                 {% endif %}
+                <li class="divider"></li>
+                <li><a href="{% url 'swagger_view' %}">Rest API</a></li>
                 <li><a href="{% url 'core_main_app_logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
             {% else %}
