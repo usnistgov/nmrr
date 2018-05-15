@@ -10,6 +10,10 @@
 
 /* Reset */
 
+    :root {
+        --main-highlight-color: #257ABC;
+    }
+
 	/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {*/
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -2361,7 +2365,7 @@
                     top: -0.5em;
 
 					font-size: 1em;
-					color: rgb(190, 120, 40);
+					color:  var(--main-highlight-color);
 				}
 
 	#nav {
@@ -2380,7 +2384,7 @@
 			display: block;
 			width: 100%;
 			height: 0.75em;
-			background-color: rgb(190, 120, 40);
+			background-color: var(--main-highlight-color);
 			background-image: url("../img/bg01.png");
 		}
 
@@ -2435,7 +2439,7 @@
 						left: 50%;
 						margin-left: -0.375em;
 						/*background-color: #37c0fb;*/
-			            background-color: rgb(190, 120, 40);
+			            background-color: var(--main-highlight-color);
 						background-image: url("../img/bg01.png");
 					}
 
@@ -2487,7 +2491,7 @@
 			.dropotron > li.active > a {
 				color: black;
 				/* Added by NIST */
-				background-color: rgb(190, 120, 40);
+				background-color: var(--main-highlight-color);
                 border-radius: 5px;
 			}
 

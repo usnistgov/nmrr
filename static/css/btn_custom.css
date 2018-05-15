@@ -1,6 +1,10 @@
+:root {
+    --main-highlight-color: #257ABC;
+}
+
 .btn-custom {
-    color: #c0c0c0;
-    background-color: rgb(190, 120, 40);
+    color: white;
+    background-color: var(--main-highlight-color);
     border-radius: 10px;
     background-size: 0em;
     font-size: inherit;
@@ -10,7 +14,6 @@
 
 .btn-custom:hover {
     color: #fff;
-    background-color: rgb(195, 125, 45);
     transition: color 0.2s ease-in-out
 }
 
