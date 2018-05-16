@@ -1,0 +1,35 @@
+{% extends 'core_main_app/_render/admin/theme/tools/box.html' %}
+
+{% block box_title %}Available{% endblock %}
+
+{% block box_tools %}
+{% endblock %}
+
+{% block box_body %}
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th width="35%">{{ data.object_name }}</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for object in data.available %}
+        <tr>
+            <td>{{ object.title }}</td>
+            <td>
+                {% block box_actions %}
+                <a class="btn btn-default"
+                   href="{% url 'admin:core_main_app_manage_template_versions' object.id %}">
+                    <i class="fa fa-list"></i> Versions
+                </a>
+                {% endblock %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td class="empty" colspan="2">
+                No {{ data.object_name }} uploaded.
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
