@@ -315,3 +315,6 @@ PARSER_DOWNLOAD_DEPENDENCIES = True
 # MENU
 CURATE_MENU_NAME = 'Publish resource'
 EXPLORE_MENU_NAME = 'Search for resources'
+
+# Can set workspace public
+CAN_SET_WORKSPACE_PUBLIC = False
