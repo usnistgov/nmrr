@@ -261,7 +261,7 @@ PASSWORD_WORDS = []
 # ===============================================
 # Choose from:  black, black-light, blue, blue-light, green, green-light, purple, purple-light, red, red-light, yellow,
 #               yellow-light
-WEBSITE_ADMIN_COLOR = "yellow"
+WEBSITE_ADMIN_COLOR = "blue"
 
 WEBSITE_SHORT_TITLE = "NMRR"
 
