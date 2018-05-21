@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^', include("core_website_app.urls")),
     url(r'^curate/', include("core_curate_app.urls")),
     url(r'^parser/', include("core_parser_app.urls")),
-    url(r'^exporter/', include("core_exporters_app.urls")),
     url(r'^explore/common/', include("core_explore_common_app.urls")),
     url(r'^explore/keyword/', include("core_explore_keyword_app.urls")),
     url(r'^oaipmh_search/', include("core_explore_oaipmh_app.urls")),
