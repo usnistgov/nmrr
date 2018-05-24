@@ -316,3 +316,6 @@ EXPLORE_MENU_NAME = 'Search for resources'
 
 # Can set workspace public
 CAN_SET_WORKSPACE_PUBLIC = False
+
+# CAN SET PUBLIC DATA TO PRIVATE
+CAN_SET_PUBLIC_DATA_TO_PRIVATE = False
