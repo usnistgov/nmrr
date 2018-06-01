@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     "core_oaipmh_common_app",
     "core_oaipmh_harvester_app",
     "core_oaipmh_provider_app",
+    "core_curate_registry_app",
     "core_curate_app",
     "core_parser_app",
     "core_parser_app.tools.modules",  # FIXME: make modules an app

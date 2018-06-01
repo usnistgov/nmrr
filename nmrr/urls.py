@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^', include("core_main_registry_app.urls")),
     url(r'^home/', include("nmrr_home.urls")),
     url(r'^', include("core_website_app.urls")),
-    url(r'^curate/', include("core_curate_app.urls")),
+    url(r'^curate/', include("core_curate_registry_app.urls")),
     url(r'^parser/', include("core_parser_app.urls")),
     url(r'^explore/common/', include("core_explore_common_app.urls")),
     url(r'^explore/keyword/', include("core_explore_keyword_app.urls")),
