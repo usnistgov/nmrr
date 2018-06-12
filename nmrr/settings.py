@@ -67,6 +67,10 @@ INSTALLED_APPS = (
     "core_dashboard_registry_app",
     "core_dashboard_common_app",
 
+    # Modules
+    "core_module_local_id_registry_app",
+    "core_module_status_registry_app",
+
     # Local apps
     "nmrr_home"
 )

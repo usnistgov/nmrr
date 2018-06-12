@@ -31,6 +31,8 @@ urlpatterns = [
     url(r'^dashboard/', include("core_dashboard_registry_app.urls")),
     url(r'^oai_pmh/', include("core_oaipmh_harvester_app.urls")),
     url(r'^oai_pmh/server/', include("core_oaipmh_provider_app.urls")),
+    url(r'^', include('core_module_local_id_registry_app.urls')),
+    url(r'^', include('core_module_status_registry_app.urls')),
 ]
 
 # TODO: see if we can automate the discovery and run it from parser app

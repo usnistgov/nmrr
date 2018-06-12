@@ -5,3 +5,5 @@ core_explore_keyword_app==1.0.0-beta3
 core_explore_oaipmh_app==1.0.0-beta4
 core_oaipmh_provider_app==1.0.0-beta3
 core_website_app==1.0.0-beta3
+core_module_local_id_registry_app==1.0.0-alpha1
+core_module_status_registry_app==1.0.0-alpha1
