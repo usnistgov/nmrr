@@ -329,3 +329,6 @@ CAN_SET_PUBLIC_DATA_TO_PRIVATE = False
 DATA_DISPLAY_NAME = 'resource'
 DRAFT_DISPLAY_NAME = 'draft'
 WORKSPACE_DISPLAY_NAME = 'workspace'
+
+
+DEFAULT_DATA_RENDERING_XSLT = os.path.join('core_main_registry_app', 'xsl', 'xml2html.xsl')
