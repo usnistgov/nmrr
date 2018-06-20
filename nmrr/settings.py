@@ -334,3 +334,8 @@ WORKSPACE_DISPLAY_NAME = 'workspace'
 
 
 DEFAULT_DATA_RENDERING_XSLT = os.path.join('core_main_registry_app', 'xsl', 'xml2html.xsl')
+
+# Results per page for paginator
+CAN_ANONYMOUS_ACCESS_PUBLIC_DATA = True
+""" boolean: Can anonymous user access public data
+"""
