@@ -1,3 +1,6 @@
+{% load staticfiles %}
+<script src="{% static 'js/tiles.js' %}"></script>
+
 {% if tiles|length > 0 %}
     <h2 id="available-options">Resources Type</h2>
     {% for tile in tiles %}
@@ -6,11 +9,24 @@
             <i class="fa {{ tile.logo }}" {% if tile.color %}style="color: {{ tile.color }};"{% endif %}></i>
         </div>
         <div class="text">
-            <h3><a href="{{ tile.link }}">{{ tile.title }}</a></h3>
+            <h3><a href="javascript:void(0)" onclick="submitRefinement({{ tile.categories }});">{{tile.title }}</a></h3>
             <p>
                 {{ tile.text }}
             </p>
         </div>
     </div>
     {% endfor %}
+
+    <form action="{% url 'core_explore_keyword_app_search' %}" method="POST" id="form" style="display: none">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-9">
+                 <div class="col-sm-10">
+                    <input id="id_query_id" name="query_id" type="text" value="{{query_id}}">
+                    <input id="id_user_id" name="user_id" type="text" value="{{user_id}}">
+                    <!-- Refinements input will be created dynamically. See js/tiles.js -->
+                </div>
+            </div>
+        </div>
+    </form>
 {% endif %}
