@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     "core_module_local_id_registry_app",
     "core_module_status_registry_app",
     "core_module_fancy_tree_registry_app",
+    "core_module_text_area_app",
 
     # Local apps
     "nmrr_home"
