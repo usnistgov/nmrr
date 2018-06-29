@@ -9,7 +9,7 @@
             <i class="fa {{ tile.logo }}" {% if tile.color %}style="color: {{ tile.color }};"{% endif %}></i>
         </div>
         <div class="text">
-            <h3><a href="javascript:void(0)" onclick="submitRefinement({{ tile.categories }});">{{tile.title }}</a></h3>
+            <h3><a href="javascript:void(0)" onclick="submitRefinement({{ tile.categories }}, '{{refinement_form_id}}');">{{tile.title }}</a></h3>
             <p>
                 {{ tile.text }}
             </p>

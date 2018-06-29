@@ -17,7 +17,8 @@ def tiles(request):
         "tiles": []
     }
 
-    if "core_explore_keyword_app" in installed_apps:
+    if "core_explore_keyword_registry_app" in installed_apps:
+        from core_explore_keyword_registry_app.views.user.forms import RefinementForm
         from core_explore_common_app.components.query import api as query_api
         from core_explore_common_app.components.query.models import Query
         from core_explore_common_app.views.user.ajax import add_local_data_source
@@ -45,6 +46,9 @@ def tiles(request):
             # Get type refinement
             refinement = refinement_api.get_by_template_hash_and_by_slug(template_hash=template.hash,
                                                                          slug='type')
+            # Refinement form ID
+            refinement_form_id = "{0}-{1}".format(RefinementForm.prefix, refinement.slug)
+            context["refinement_form_id"] = refinement_form_id
             # Shorter api name
             get_categories = category_api.get_all_categories_ids_by_parent_slug_and_refinement_id
             organizations_tile = {
