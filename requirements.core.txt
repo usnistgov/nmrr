@@ -4,6 +4,7 @@ core-dashboard-registry-app==1.0.0-alpha3
 core-explore-keyword-registry-app==1.0.0-alpha2
 core-explore-oaipmh-app==1.0.0-beta5
 core-oaipmh-provider-app==1.0.0-beta4
+core-oaipmh-harvester-app==1.0.0-beta4
 core-website-app==1.0.0-beta4
 core-module-local-id-registry-app==1.0.0-alpha2
 core-module-status-registry-app==1.0.0-alpha2
