@@ -1,0 +1,2 @@
+msgid "form_label"
+msgstr "draft"
