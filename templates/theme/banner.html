@@ -1,7 +1,7 @@
 <header>
-    <h1 id="logo">Materials Resource Registry</h1>
+    <h1 id="logo">{{ CUSTOM_TITLE }}</h1>
     {% if subtitle %}
-        <p>Part of the <strong>Materials Genome Initiative</strong></p>
+        <p>{{ CUSTOM_SUBTITLE }}</p>
         {% if 'core_explore_keyword_app' in INSTALLED_APPS %}
             <div id="banner_sub">
                 {% include 'theme/search_bar.html'%}

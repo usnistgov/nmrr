@@ -281,8 +281,9 @@ WEBSITE_SHORT_TITLE = "NMRR"
 DATA_AUTO_PUBLISH = True
 
 # Customization Label
-CUSTOM_CURATE = 'Add your resource'
 CUSTOM_DATA = "Materials Data"
+CUSTOM_TITLE = "Materials Resource Registry"
+CUSTOM_SUBTITLE = "Part of the Materials Genome Initiative"
 CUSTOM_NAME = "NMRR"
 
 DISPLAY_NIST_HEADERS = True
