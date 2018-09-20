@@ -286,8 +286,6 @@ CUSTOM_TITLE = "Materials Resource Registry"
 CUSTOM_SUBTITLE = "Part of the Materials Genome Initiative"
 CUSTOM_NAME = "NMRR"
 
-DISPLAY_NIST_HEADERS = True
-
 DATA_SOURCES_EXPLORE_APPS = ['core_explore_oaipmh_app']
 
 # FIXME: set desired value before release
