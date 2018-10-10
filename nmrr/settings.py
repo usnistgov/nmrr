@@ -108,7 +108,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 "core_main_app.utils.custom_context_processors.domain_context_processor",  # Needed by any curator app
-                "nmrr.custom_context_processors.domain_context_processor",  # Needed by NMRR
                 "django.template.context_processors.i18n",
             ],
         },
