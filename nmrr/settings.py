@@ -336,10 +336,13 @@ CAN_SET_PUBLIC_DATA_TO_PRIVATE = False
 # DASHBOARD
 WORKSPACE_DISPLAY_NAME = 'workspace'
 
-
 DEFAULT_DATA_RENDERING_XSLT = os.path.join('core_main_registry_app', 'xsl', 'xml2html.xsl')
 
 # Results per page for paginator
 CAN_ANONYMOUS_ACCESS_PUBLIC_DATA = True
 """ boolean: Can anonymous user access public data
+"""
+
+EXPLORE_ADD_DEFAULT_LOCAL_DATA_SOURCE_TO_QUERY = True
+""" boolean: Do we add the local data source to new queries by default
 """
