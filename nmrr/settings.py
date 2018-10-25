@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     "rest_framework_swagger",
     "rest_framework_mongoengine",
     "menu",
+    "tz_detect",
 
     # Core apps
     "core_main_app",
@@ -89,6 +90,7 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'tz_detect.middleware.TimezoneMiddleware',
     # 'password_policies.middleware.PasswordChangeMiddleware',
 )
 
