@@ -112,8 +112,8 @@
 ###	1. Install supporting applications on your host system.
 
 * Python 2.7: https://www.continuum.io/downloads (choose python 2)
-* MongoDB   : https://www.mongodb.com/download-center#community
-* Redis     : https://redis.io/download
+* MongoDB 3.4.1: https://www.mongodb.com/download-center#community
+* Redis 5.0: https://redis.io/download
 * Celery    : NOTE: This is installed below via `pip install`.
 * gettext   : This utility is necessary for supporting internationalization in NMRR 2.0 systems >= NMRR 2.0 beta1.
     - On Linux,
