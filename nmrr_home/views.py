@@ -19,6 +19,7 @@ def tiles(request):
 
     if "core_explore_keyword_registry_app" in installed_apps:
         from core_explore_keyword_registry_app.views.user.forms import RefinementForm
+        from core_explore_keyword_registry_app.views.user.views import set_visibility_to_query
         from core_explore_common_app.components.query import api as query_api
         from core_explore_common_app.components.query.models import Query
         from core_explore_common_app.views.user.ajax import add_local_data_source
@@ -29,10 +30,15 @@ def tiles(request):
 
         # create Query
         query = Query(user_id=str(request.user.id), templates=[])
-        query_api.upsert(query)
 
         # add local data source to the query
         add_local_data_source(request, query)
+
+        # set visibility
+        set_visibility_to_query(query)
+
+        # upsert the query
+        query_api.upsert(query)
 
         # add information in context to populate keyword form
         context.update({
