@@ -14,3 +14,7 @@
     color: #a94442;
 }
 
+.tools-dropdown {
+    float: right;
+    padding-left: 35px;
+}
