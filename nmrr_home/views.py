@@ -115,9 +115,9 @@ def tiles(request):
             }
 
             context["tiles"].append(software_tile)
-        except (exceptions.DoesNotExist, exceptions.ModelError), e:
+        except (exceptions.DoesNotExist, exceptions.ModelError) as e:
             logger.error("Error while getting information from the database: {0}".format(e.message))
-        except Exception, ex:
+        except Exception as ex:
             logger.error("Something wrong occurred during the tiles "
                          "generation: {0}".format(ex.message))
 
