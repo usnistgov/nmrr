@@ -1,3 +1,4 @@
+from builtins import str
 import logging
 
 from django.shortcuts import render
@@ -116,9 +117,9 @@ def tiles(request):
 
             context["tiles"].append(software_tile)
         except (exceptions.DoesNotExist, exceptions.ModelError) as e:
-            logger.error("Error while getting information from the database: {0}".format(e.message))
+            logger.error("Error while getting information from the database: {0}".format(str(e)))
         except Exception as ex:
             logger.error("Something wrong occurred during the tiles "
-                         "generation: {0}".format(ex.message))
+                         "generation: {0}".format(str(ex)))
 
     return render(request, "nmrr_home/tiles.html", context)
