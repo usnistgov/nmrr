@@ -193,7 +193,7 @@ LOGGING = {
     'formatters': {
         'fmt-default': {
             'format': "%(asctime)s\t%(name)s\t%(pathname)s\tl.%(lineno)s\t%(message)s",
-            'datefmt': "%Y-%m-%d_%H-%M-%S"
+            'datefmt': "%Y-%m-%d %H:%M:%S"
         },
     },
     'handlers': {
