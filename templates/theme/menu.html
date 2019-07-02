@@ -1,4 +1,5 @@
 {% load menu %}
+{% load get_attribute %}
 {% load staticfiles %}
 <nav id="nav">
     <ul>
@@ -12,7 +13,7 @@
 
             {% for item in menus.main %}
                 <li {% if item == selected_menu %}class="current"{% endif %}>
-                    <a href="{{ item.url }}"><i class="fa fa-{{ item.icon }}"></i> {{ item.title }}</a>
+                    <a href="{{ item.url }}">{% if item|get_attribute:'icon' %}<i class="fa fa-{{ item.icon }}"></i>{%endif%}{{ item.title }}</a>
                 </li>
             {% endfor %}
         {% endblock %}
