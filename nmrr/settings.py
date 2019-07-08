@@ -34,6 +34,10 @@ REGISTRY_XSD_FILENAME = constants.NMRR_XSD_FILENAME
 """ str: Registry xsd filename used for the initialisation.
 """
 
+CUSTOM_REGISTRY_FILE_PATH = os.path.join('json', 'custom_registry.json')
+""" str: Custom registry configuration file path used for the initialisation.
+"""
+
 # Application definition
 
 INSTALLED_APPS = (
