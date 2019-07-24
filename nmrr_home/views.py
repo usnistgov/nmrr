@@ -26,6 +26,7 @@ def tiles(request):
         from core_main_registry_app.components.refinement import api as refinement_api
         from core_main_registry_app.components.category import api as category_api
         from core_main_registry_app.components.template import api as template_registry_api
+        from core_main_registry_app.components.custom_resource import api as custom_resource_api
         from core_main_app.commons import exceptions as exceptions
 
         # create Query
@@ -56,66 +57,21 @@ def tiles(request):
             refinement_form_id = "{0}-{1}".format(RefinementForm.prefix, refinement.slug)
             context["refinement_form_id"] = refinement_form_id
             # Shorter api name
-            get_categories = category_api.get_all_categories_ids_by_parent_slug_and_refinement_id
-            organizations_tile = {
-                "logo": "fa-university",
-                "color": "#2CAAE2",
-                "categories":  get_categories('organization', refinement.id),
-                "title": "Organizations",
-                "text": "Click here to explore the Organizations."
-            }
+            get_categories = category_api.get_all_categories_ids_from_name_and_refinement_id
 
-            context["tiles"].append(organizations_tile)
+            custom_resources = custom_resource_api.get_all_of_current_template()
 
-            data_collections_tile = {
-                "logo": "fa-table",
-                "color": "#A1C057",
-                "categories":  get_categories('collection', refinement.id),
-                "title": "Data Collections",
-                "text": "Click here to explore the Data Collections."
-            }
+            for custom_resource in custom_resources:
+                if custom_resource.display_icon and custom_resource.role_type is not None:
+                    tile = {
+                        "logo": custom_resource.icon,
+                        "color": custom_resource.icon_color,
+                        "categories": get_categories(custom_resource.role_type.split(':')[0], refinement.id),
+                        "title": custom_resource.title,
+                        "text": "Click here to explore the {0}.".format(custom_resource.title)
+                    }
+                    context["tiles"].append(tile)
 
-            context["tiles"].append(data_collections_tile)
-
-            datasets_tile = {
-                "logo": "fa-database",
-                "color": "grey",
-                "categories":  get_categories('dataset', refinement.id),
-                "title": "Datasets",
-                "text": "Click here to explore the Datasets."
-            }
-
-            context["tiles"].append(datasets_tile)
-
-            services_tile = {
-                "logo": "fa-cogs",
-                "color": "#EBB057;",
-                "categories":  get_categories('service', refinement.id),
-                "title": "Services",
-                "text": "Click here to explore the Services."
-            }
-
-            context["tiles"].append(services_tile)
-
-            informational_tile = {
-                "logo": "fa-laptop",
-                "color": "#257ABC;",
-                "categories":  get_categories('web-site', refinement.id),
-                "title": "Informational Sites",
-                "text": "Click here to explore the Informational Sites."
-            }
-
-            context["tiles"].append(informational_tile)
-
-            software_tile = {
-                "logo": "fa-tachometer",
-                "color": "#79B320;",
-                "categories":  get_categories('software', refinement.id),
-                "title": "Software",
-                "text": "Click here to explore the Software."
-            }
-
-            context["tiles"].append(software_tile)
         except (exceptions.DoesNotExist, exceptions.ModelError) as e:
             logger.error("Error while getting information from the database: {0}".format(str(e)))
         except Exception as ex:
