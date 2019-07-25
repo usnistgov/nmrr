@@ -5,7 +5,7 @@
 	"icon": "fa-globe",
     "icon_color": "#557EB9",
     "display_icon": true,
-	"is_resource": false,
+	"type": "all",
     "sort": 0
   },
   "Organization": {
@@ -17,6 +17,7 @@
     "description": "a group of people that come together to contribute to or participate in a federated data operation. Organizations can be hierarchical: an organization can contain or sponsor other organizations. Organizations can also aggregate or participate with other organizations in broader collaborations.",
     "role_choice": "Organization",
     "role_type": "Organization",
+    "type": "resource",
     "sort": 1
   },
   "DataCollection": {
@@ -28,6 +29,7 @@
     "description": "An aggregation of one or more datasets, possibly spanning many research projects or teams.",
     "role_choice": "DataCollection",
     "role_type": "Collection",
+    "type": "resource",
     "sort": 2
   },
   "Repository": {
@@ -39,6 +41,7 @@
     "description": "A data collection service that specializes in hosting data from many different research teams and projects.",
     "role_choice": "DataCollection",
     "role_type": "Collection: Repository",
+    "type": "resource",
     "sort": 3
   },
   "Project Archive": {
@@ -50,6 +53,7 @@
     "description": "A large collection of data resulting from a project that produces and publishes data over an extended period of time and made accessible through a common portal or interface.",
     "role_choice": "DataCollection",
     "role_type": "Collection: Project Archive",
+    "type": "resource",
     "sort": 4
   },
   "Database": {
@@ -61,6 +65,7 @@
     "description": "A collection of data that is not formally file-based but stored in a database system. Here, a database is not assumed to be relational and can be quite complex in structure.",
     "role_choice": "Dataset",
     "role_type": "Dataset: Database",
+    "type": "resource",
     "sort": 5
   },
   "Dataset": {
@@ -72,6 +77,7 @@
     "description": "a set of data (can be one or more separate files or other digital objects) that is unified by a common set of research goals and/or results. This is intended to be a single publishable unit of scientific output that might be described in a single journal article.",
     "role_choice": "Dataset",
     "role_type": "Dataset",
+    "type": "resource",
     "sort": 6
   },
   "ServiceAPI": {
@@ -83,6 +89,7 @@
     "description": "a set of data (can be one or more separate files or other digital objects) that is unified by a common set of research goals and/or results. This is intended to be a single publishable unit of scientific output that might be described in a single journal article.",
     "role_choice": "ServiceAPI",
     "role_type": "Service: API",
+    "type": "resource",
     "sort": 7
   },
   "WebSite": {
@@ -94,6 +101,7 @@
     "description": "A (web) site that aggregates useful information for research. The information is not generally machine-processable, but rather is intended for consumption by a human (e.g. via a web browser).",
     "role_choice": "WebSite",
     "role_type": "Web Site: InteractiveResource: Portal",
+    "type": "resource",
     "sort": 8
   },
   "Software": {
@@ -105,6 +113,7 @@
     "description": "A software tool or library.",
     "role_choice": "Software",
     "role_type": "Software",
+    "type": "resource",
     "sort": 9
   }
 }
