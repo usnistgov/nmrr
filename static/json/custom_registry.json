@@ -1,7 +1,6 @@
 {
   "all_resource": {
     "title": "All Resources",
-    "url_key": "all",
 	"icon": "fa-globe",
     "icon_color": "#557EB9",
     "display_icon": true,
@@ -10,7 +9,6 @@
   },
   "Organization": {
     "title": "Organization",
-    "url_key": "organization",
     "icon": "fa-university",
     "icon_color": "#2CAAE2",
     "display_icon": true,
@@ -22,7 +20,6 @@
   },
   "DataCollection": {
     "title": "Data Collection",
-    "url_key": "datacollection",
     "icon": "fa-table",
     "icon_color": "#A1C057",
     "display_icon": true,
@@ -34,7 +31,6 @@
   },
   "Repository": {
     "title": "Repository",
-    "url_key": "repository",
     "icon": "fa-table",
     "icon_color": "#A1C057",
     "display_icon": false,
@@ -46,7 +42,6 @@
   },
   "Project Archive": {
     "title": "Project Archive",
-    "url_key": "projectarchive",
     "icon": "fa-table",
     "icon_color": "#A1C057",
     "display_icon": false,
@@ -58,7 +53,6 @@
   },
   "Database": {
     "title": "Database",
-    "url_key": "database",
     "icon": "fa-database",
     "icon_color": "grey",
     "display_icon": false,
@@ -70,7 +64,6 @@
   },
   "Dataset": {
     "title": "Dataset",
-    "url_key": "dataset",
     "icon": "fa-database",
     "icon_color": "grey",
     "display_icon": true,
@@ -82,7 +75,6 @@
   },
   "ServiceAPI": {
     "title": "Service",
-    "url_key": "service",
     "icon": "fa-cogs",
     "icon_color": "#EBB057",
     "display_icon": true,
@@ -94,7 +86,6 @@
   },
   "WebSite": {
     "title": "Informational Sites",
-    "url_key": "informational",
     "icon": "fa-laptop",
     "icon_color": "#257ABC",
     "display_icon": true,
@@ -106,7 +97,6 @@
   },
   "Software": {
     "title": "Software",
-    "url_key": "software",
     "icon": "fa-tachometer",
     "icon_color": "#79B320",
     "display_icon": true,
