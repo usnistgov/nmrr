@@ -16,7 +16,8 @@
     "role_choice": "Organization",
     "role_type": "Organization",
     "type": "resource",
-    "sort": 1
+    "sort": 1,
+    "refinements": ["unspecified Organization"]
   },
   "DataCollection": {
     "title": "Data Collection",
@@ -27,7 +28,8 @@
     "role_choice": "DataCollection",
     "role_type": "Collection",
     "type": "resource",
-    "sort": 2
+    "sort": 2,
+    "refinements": ["unspecified Collection"]
   },
   "Repository": {
     "title": "Repository",
@@ -71,7 +73,8 @@
     "role_choice": "Dataset",
     "role_type": "Dataset",
     "type": "resource",
-    "sort": 6
+    "sort": 6,
+    "refinements": ["unspecified Dataset"]
   },
   "ServiceAPI": {
     "title": "Service",
@@ -82,7 +85,8 @@
     "role_choice": "ServiceAPI",
     "role_type": "Service: API",
     "type": "resource",
-    "sort": 7
+    "sort": 7,
+    "refinements": ["API"]
   },
   "WebSite": {
     "title": "Informational Sites",
@@ -93,7 +97,8 @@
     "role_choice": "WebSite",
     "role_type": "Web Site: InteractiveResource: Portal",
     "type": "resource",
-    "sort": 8
+    "sort": 8,
+    "refinements": ["unspecified Web Site"]
   },
   "Software": {
     "title": "Software",
