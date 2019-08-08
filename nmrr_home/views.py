@@ -59,7 +59,7 @@ def tiles(request):
             # Shorter api name
             get_categories = category_api.get_all_categories_ids_from_name_and_refinement_id
 
-            custom_resources = custom_resource_api.get_all_of_current_template()
+            custom_resources = custom_resource_api.get_all_of_current_template().order_by('sort')
 
             for custom_resource in custom_resources:
                 if custom_resource.display_icon and custom_resource.role_type is not None:
