@@ -409,6 +409,6 @@ XSD_URI_RESOLVER = None
 """ :py:class:`str`: XSD URI Resolver for lxml validation. Choose from:  None, 'REQUESTS_RESOLVER'.
 """
 
-DATA_SORTING_FIELDS = '-last_modification_date'
+DATA_SORTING_FIELDS = ['-last_modification_date']
 """ ::py:class:`str` Default sort fields for the data query. 
 """
