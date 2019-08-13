@@ -13,7 +13,6 @@ from mongoengine.connection import connect
 
 from core_main_app.utils.logger.logger_utils import set_generic_handler, set_generic_logger, \
     update_logger_with_local_app
-from core_main_registry_app import constants
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,11 +29,17 @@ ALLOWED_HOSTS = []
 
 MENU_SELECT_PARENTS = False
 
-REGISTRY_XSD_FILENAME = constants.NMRR_XSD_FILENAME
+REGISTRY_XSD_FILENAME = 'res-md.xsd'
 """ str: Registry xsd filename used for the initialisation.
 """
 
-CUSTOM_REGISTRY_FILE_PATH = os.path.join('json', 'custom_registry.json')
+# If you want to use your own schema, set your schema here
+#REGISTRY_XSD_FILEPATH = os.path.join('xsd', REGISTRY_XSD_FILENAME)
+""" str: Registry xsd path used for the initialisation.
+"""
+
+# If you want to use your own configuration file, set your configuration file here
+# CUSTOM_REGISTRY_FILE_PATH = os.path.join('json', 'custom_registry.json')
 """ str: Custom registry configuration file path used for the initialisation.
 """
 
