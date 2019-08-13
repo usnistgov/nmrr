@@ -89,7 +89,7 @@
     "refinements": ["API"]
   },
   "WebSite": {
-    "title": "Informational Sites",
+    "title": "Informational Site",
     "icon": "fa-laptop",
     "icon_color": "#257ABC",
     "display_icon": true,
