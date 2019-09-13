@@ -19,6 +19,7 @@ from core_parser_app.tools.modules.discover import discover_modules
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/defender/', include('defender.urls')),
     url(r'^', include("core_main_registry_app.urls")),
     url(r'^home/', include("nmrr_home.urls")),
     url(r'^', include("core_website_app.urls")),
