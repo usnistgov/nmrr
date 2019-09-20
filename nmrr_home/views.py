@@ -2,6 +2,8 @@ import logging
 
 from django.shortcuts import render
 
+from nmrr.settings import DATA_SORTING_FIELDS
+
 logger = logging.getLogger(__name__)
 
 
@@ -44,7 +46,8 @@ def tiles(request):
         # add information in context to populate keyword form
         context.update({
             "query_id": str(query.id),
-            "user_id": query.user_id
+            "user_id": query.user_id,
+            'order_by_field': ','.join(DATA_SORTING_FIELDS),
         })
 
         try:
