@@ -216,7 +216,6 @@ storage:
 #### Install NMRR supporting and core software packages.
 
 ```
-$$ pip install -e git://github.com/MongoEngine/django-mongoengine.git@v0.2.1#egg=django-mongoengine
 $$ pip install --no-cache-dir -r requirements.txt
 $$ pip install --no-cache-dir -r requirements.core.txt
 ```
