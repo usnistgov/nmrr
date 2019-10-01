@@ -98,7 +98,7 @@
     "role_type": "Web Site: InteractiveResource: Portal",
     "type": "resource",
     "sort": 8,
-    "refinements": ["unspecified Web Site"]
+    "refinements": ["Informational"]
   },
   "Software": {
     "title": "Software",
