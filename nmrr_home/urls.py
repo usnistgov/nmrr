@@ -1,10 +1,9 @@
 """nmrr URL Configuration
 """
-
-from django.urls import re_path
+from django.conf.urls import url
 
 from nmrr_home import views
 
 urlpatterns = [
-    re_path(r'^tiles', views.tiles, name="nmrr_home_tiles"),
+    url(r'^tiles', views.tiles, name="nmrr_home_tiles"),
 ]
