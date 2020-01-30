@@ -417,3 +417,6 @@ DEFENDER_USE_CELERY = True
 DEFENDER_LOCKOUT_URL = "/locked"
 """ string: url to the defender error page (defined in core_main_registry_app)
 """
+OAI_ENABLE_HARVESTING = True
+""" boolean: Enable OAI-PMH harvesting by default.
+"""
