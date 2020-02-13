@@ -420,3 +420,6 @@ DEFENDER_LOCKOUT_URL = "/locked"
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
 """
+DISPLAY_LAST_MODIFICATION_DATE = False
+""" boolean: Display the last modification date.
+"""
