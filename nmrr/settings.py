@@ -423,3 +423,6 @@ OAI_ENABLE_HARVESTING = True
 DISPLAY_LAST_MODIFICATION_DATE = False
 """ boolean: Display the last modification date.
 """
+DISPLAY_EDIT_BUTTON = False
+"""Display the edit button on the result page
+"""
