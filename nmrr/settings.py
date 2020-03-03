@@ -395,7 +395,15 @@ XSD_URI_RESOLVER = None
 """
 
 DATA_SORTING_FIELDS = ['-last_modification_date']
-""" ::py:class:`str` Default sort fields for the data query. 
+""" Array<string>: Default sort fields for the data query. 
+"""
+
+DISPLAY_EDIT_BUTTON = False
+""" boolean: Display the edit button on the result page
+"""
+
+DEFAULT_DATE_TOGGLE_VALUE = False
+""" boolean: Set the toggle default value in the records list
 """
 
 # Configure Django Defender
@@ -419,10 +427,4 @@ DEFENDER_LOCKOUT_URL = "/locked"
 """
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
-"""
-DISPLAY_LAST_MODIFICATION_DATE = False
-""" boolean: Display the last modification date.
-"""
-DISPLAY_EDIT_BUTTON = False
-"""Display the edit button on the result page
 """
