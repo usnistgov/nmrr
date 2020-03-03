@@ -428,3 +428,6 @@ DEFENDER_LOCKOUT_URL = "/locked"
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
 """
+DATA_DISPLAYED_SORTING_FIELDS = [{'field': 'title', 'display': 'Title'},
+                                 {'field': 'last_modification_date', 'display': 'Last modification date'}]
+"""The default sorting fields displayed on the GUI, Data model field Array"""
