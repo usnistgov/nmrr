@@ -405,6 +405,15 @@ DISPLAY_EDIT_BUTTON = False
 DEFAULT_DATE_TOGGLE_VALUE = False
 """ boolean: Set the toggle default value in the records list
 """
+DATA_DISPLAYED_SORTING_FIELDS = [
+    {'field': 'last_modification_date', 'display': 'Last updated', 'ordering': '-last_modification_date'},
+    {'field': 'last_modification_date', 'display': 'First updated', 'ordering': '+last_modification_date'},
+    {'field': 'title', 'display': 'Title (A-Z)', 'ordering': '+title'},
+    {'field': 'title', 'display': 'Title (Z-A)', 'ordering': '-title'}
+]
+"""The default sorting fields displayed on the GUI, Data model field Array"""
+SORTING_DISPLAY_TYPE = 'single'
+"""Result sorting graphical display type ('multi' / 'single')"""
 
 # Configure Django Defender
 DEFENDER_REDIS_URL = REDIS_URL
@@ -428,6 +437,3 @@ DEFENDER_LOCKOUT_URL = "/locked"
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
 """
-DATA_DISPLAYED_SORTING_FIELDS = [{'field': 'title', 'display': 'Title'},
-                                 {'field': 'last_modification_date', 'display': 'Last modification date'}]
-"""The default sorting fields displayed on the GUI, Data model field Array"""
