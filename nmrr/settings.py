@@ -34,12 +34,12 @@ REGISTRY_XSD_FILENAME = 'res-md.xsd'
 """
 
 # If you want to use your own schema, set your schema here
-#REGISTRY_XSD_FILEPATH = os.path.join('xsd', REGISTRY_XSD_FILENAME)
+REGISTRY_XSD_FILEPATH = os.path.join('xsd', REGISTRY_XSD_FILENAME)
 """ str: Registry xsd path used for the initialisation.
 """
 
 # If you want to use your own configuration file, set your configuration file here
-# CUSTOM_REGISTRY_FILE_PATH = os.path.join('json', 'custom_registry.json')
+CUSTOM_REGISTRY_FILE_PATH = os.path.join('json', 'custom_registry.json')
 """ str: Custom registry configuration file path used for the initialisation.
 """
 
