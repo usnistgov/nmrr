@@ -121,6 +121,6 @@
     "role_type": "Semantic Asset",
     "type": "resource",
     "sort": 10,
-    "refinements": ["unspecified Semantic Asset"]
+    "refinements": ["Semantic Asset"]
   }
 }
