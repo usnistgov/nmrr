@@ -31,8 +31,11 @@
 		// Disable animations/transitions until the page has loaded.
         $body.addClass('is-loading');
 
-        $window.on('load', function() {
-            $body.removeClass('is-loading');
+		// Disable animations/transitions until the page has loaded.
+        setTimeout(function(){
+            $(document).ready( function() {
+                $body.removeClass('is-loading');
+            });
         });
 
 		// Fix: Placeholder polyfill.
