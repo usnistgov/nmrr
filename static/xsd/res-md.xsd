@@ -908,17 +908,94 @@
             </xs:annotation>
           </xs:element>
 
-          <xs:element name="supportsFormat" type="rsm:SemanticAssetFileFormat" minOccurs="0"
+          <xs:element name="supportsFormat" minOccurs="0"
                       maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                <label>Type</label>
+                <label>Supported Format</label>
               </xs:appinfo>
               <xs:documentation>
                 a format for serializing semantic information that is used, provide, or
                 leveraged by this resource.  
               </xs:documentation>
             </xs:annotation>
+            <xs:simpleType>
+            <xs:annotation>
+              <xs:documentation>
+                a file format for encoding semantic information
+              </xs:documentation>
+            </xs:annotation>
+
+            <xs:restriction base="xs:token">
+
+              <xs:enumeration value="Supported Format: JSON">
+                <xs:annotation>
+                  <xs:documentation>
+                    JavaScript Object Notation as defined by IETF RFC8259 and described at
+                    https://json.org/.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: JSON-LD">
+                <xs:annotation>
+                  <xs:documentation>
+                    JSON for Linked Data as defined by W3C and described at https://json-ld.org.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: N-Triples">
+                <xs:annotation>
+                  <xs:documentation>
+                    The N-Triples RDF serialization format as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: N-Quads">
+                <xs:annotation>
+                  <xs:documentation>
+                    The N-Quads RDF serialization format as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: RDF/JSON">
+                <xs:annotation>
+                  <xs:documentation>
+                    The RDF 1.1 JSON Alternative Serialization for RDF as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: RDF/XML">
+                <xs:annotation>
+                  <xs:documentation>
+                    The RDF 1.1 XML Syntax for RDF as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: Turtle">
+                <xs:annotation>
+                  <xs:documentation>
+                    The Terse RDF Triple Language (Turtle) format for RDF as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+              <xs:enumeration value="Supported Format: XML">
+                <xs:annotation>
+                  <xs:documentation>
+                    The eXtensible Markup Language (XML) information serialization format as defined by W3C
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+
+            </xs:restriction>
+          </xs:simpleType>
+
           </xs:element>
 
         </xs:sequence>
@@ -1220,83 +1297,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="SemanticAssetFileFormat">
-    <xs:annotation>
-      <xs:documentation>
-        a file format for encoding semantic information
-      </xs:documentation>
-    </xs:annotation>
-
-    <xs:restriction base="xs:token">
-
-      <xs:enumeration value="Supported Format: JSON">
-        <xs:annotation>
-          <xs:documentation>
-            JavaScript Object Notation as defined by IETF RFC8259 and described at
-            https://json.org/.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: JSON-LD">
-        <xs:annotation>
-          <xs:documentation>
-            JSON for Linked Data as defined by W3C and described at https://json-ld.org.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: N-Triples">
-        <xs:annotation>
-          <xs:documentation>
-            The N-Triples RDF serialization format as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: N-Quads">
-        <xs:annotation>
-          <xs:documentation>
-            The N-Quads RDF serialization format as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: RDF/JSON">
-        <xs:annotation>
-          <xs:documentation>
-            The RDF 1.1 JSON Alternative Serialization for RDF as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: RDF/XML">
-        <xs:annotation>
-          <xs:documentation>
-            The RDF 1.1 XML Syntax for RDF as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: Turtle">
-        <xs:annotation>
-          <xs:documentation>
-            The Terse RDF Triple Language (Turtle) format for RDF as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      
-      <xs:enumeration value="Supported Format: XML">
-        <xs:annotation>
-          <xs:documentation>
-            The eXtensible Markup Language (XML) information serialization format as defined by W3C
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-
-    </xs:restriction>
-  </xs:simpleType>
-   
    <xs:complexType name="Identity">
      <xs:annotation>
        <xs:documentation>
