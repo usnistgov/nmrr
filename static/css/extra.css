@@ -1,7 +1,23 @@
+/* Bootstrap overide */
+.btn.btn-primary {
+    background-color: #0059b9 !important;
+    border-color: #545454
+}
+
+.btn.btn-secondary {
+background-color: #f9f9f9 !important;
+    border-color: #949494 !important;
+    color: black !important;
+}
+
+.modal-footer {
+    padding: .75rem 0 .75rem 0;
+}
+
 #content {
+    width: calc(100% - 3em);
     background-color: #fff;
-    margin: 0 1.5em;
-    padding: 1.5em;
+    margin: 1px 1.5em 0 1.5em;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }

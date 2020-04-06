@@ -13,6 +13,7 @@
     <link rel=icon href="{% static 'img/favicon.png' %}" sizes="16x16" type="image/png">
 
     <!--[if lte IE 8]><script src="{% static 'ie/html5shiv.js' %}"></script><![endif]-->
+    <link rel="stylesheet" href="{% static 'css/fancytree-glyphicon.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
     <link rel="stylesheet" href="{% static 'css/extra.css' %}" />
@@ -47,7 +48,7 @@
             {% endif %}
         </div>
 
-        <div id="content" class="container-fluid">
+        <div id="content" class="p-5 container-fluid">
             {% block app_data %}{% endblock %}
         </div>
 
