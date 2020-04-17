@@ -2602,11 +2602,6 @@
 
 /* Footer */
 
-	#footer {
-		/*padding: 4em 0 8em 0;*/
-		padding: 1em 0 3em 0;
-	}
-
 		#footer a {
 			color: inherit;
 			border-bottom-color: rgba(71, 71, 71, 0.25);
@@ -2636,7 +2631,7 @@
 
 		#footer .copyright {
 			color: #999;
-			margin-top: 1.5em;
+			margin-top: .5em;
 			text-align: center;
 			font-size: 0.9em;
 		}

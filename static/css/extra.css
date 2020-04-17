@@ -1,7 +1,7 @@
 /* Bootstrap overide */
 .btn.btn-primary {
-    background-color: #0059b9 !important;
-    border-color: #545454
+    background-color: #007ac1 !important;
+    border-color: #565656;
 }
 
 .btn.btn-secondary {
@@ -11,7 +11,12 @@ background-color: #f9f9f9 !important;
 }
 
 .modal-footer {
-    padding: .75rem 0 .75rem 0;
+  justify-content: space-between !important;
+  padding: .75rem 0 .75rem 0;
+}
+
+.save-registry-button-container:parent {
+    justify-content: center !important;
 }
 
 #content {
@@ -34,3 +39,9 @@ background-color: #f9f9f9 !important;
     float: right;
     padding-left: 35px;
 }
+
+.page-item.active .page-link {
+    background-color: #007ac1 !important;
+    border-color: #565656;
+}
+
