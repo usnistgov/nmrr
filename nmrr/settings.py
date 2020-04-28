@@ -437,3 +437,18 @@ DEFENDER_LOCKOUT_URL = "/locked"
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
 """
+DISPLAY_PRIVACY_POLICY_FOOTER = True
+""" boolean: display the privacy policy link in the footer
+"""
+DISPLAY_TERMS_OF_USE_FOOTER = True
+""" boolean: display the terms of use link in the footer
+"""
+DISPLAY_CONTACT_FOOTER = True
+""" boolean: display the contact link in the footer
+"""
+DISPLAY_HELP_FOOTER = True
+""" boolean: display the help link in the footer
+"""
+DISPLAY_RULES_OF_BEHAVIOR_FOOTER = True
+""" boolean: display the rules of behavior link in the footer
+"""
