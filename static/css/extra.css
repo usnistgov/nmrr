@@ -53,3 +53,7 @@
     border-color: #565656;
 }
 
+.errorlist {
+    color: red;
+    margin-bottom: .1em;
+}
