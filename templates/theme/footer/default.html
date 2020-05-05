@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load menu %}
 
 <div id="footer" class="container-fluid px-5">
     <div class="row copyright">
@@ -23,15 +22,8 @@
                 </li>
             </ul>
         </div>
-        {% block footer_menu %}
-                {% generate_menu %}
-                <div class="px-1 col-md-6 col-sm-3 text-right">
-                    <ul class="menu">
-                        {% for item in menus.footer %}
-                            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-        {% endblock %}
+        <div class="px-1 col-md-6 col-sm-3 text-right">
+            {% include 'core_website_app/user/footer_menu.html' %}
+        </div>
   </div>
 </div>
