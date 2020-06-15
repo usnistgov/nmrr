@@ -19,6 +19,17 @@
         {% endblock %}
 
         <li class="nested">
+            <a href="#">
+                Help <i class="fa fa-caret-down"></i>
+            </a>
+            <ul>
+                {% generate_menu %}
+                {% for item in menus.help %}
+                    <li><a href="{{ item.url }}" class="cdcs-menu-item">{% if item|get_attribute:'icon' %}<i class="fa fa-{{ item.icon }}"></i>{% endif %} {{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="nested">
             {% if user.is_authenticated %}
             <a href="#" class="btn-custom">
                 <i class="fa fa-user"></i> {{ user }} <i class="fa fa-chevron-down"></i>
