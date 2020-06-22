@@ -36,6 +36,7 @@ urlpatterns = [
     re_path(r"^", include("core_module_status_registry_app.urls")),
     re_path(r"^", include("core_module_fancy_tree_registry_app.urls")),
     re_path(r"^", include("core_module_text_area_app.urls")),
+    re_path(r"^pid/", include("core_linked_records_app.urls")),
 ]
 
 # TODO: see if we can automate the discovery and run it from parser app

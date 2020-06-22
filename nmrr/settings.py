@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     "core_dashboard_registry_app",
     "core_dashboard_common_app",
     "mptt",
+    "core_linked_records_app",
     # Modules
     "core_module_local_id_registry_app",
     "core_module_status_registry_app",
@@ -495,4 +496,22 @@ DISPLAY_HELP_FOOTER = True
 """
 DISPLAY_RULES_OF_BEHAVIOR_FOOTER = True
 """ boolean: display the rules of behavior link in the footer
+"""
+
+ID_PROVIDER_SYSTEMS = {
+    "local": {
+        "class": "core_linked_records_app.utils.providers.local.LocalIdProvider",
+        "args": [SERVER_URI],
+    },
+}
+""" dict: provider systems available for registring PIDs
+"""
+
+ID_PROVIDER_PREFIXES = ["cdcs"]
+""" list<string>: accepted prefixes if manually specifying PIDs (first item is the
+default prefix)
+"""
+
+PID_XPATH = "Resource.@localid"
+""" string: location of the PID in the document, specified as dot notation
 """
