@@ -2472,6 +2472,11 @@
   padding-left: 2em;
 }
 
+#nav > ul > li {
+  text-align:center;
+  width: 110px;
+}
+
 #nav > ul > #cdcs-main > a {
   margin-bottom: 0;
 }
