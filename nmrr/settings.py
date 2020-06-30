@@ -515,3 +515,7 @@ default prefix)
 PID_XPATH = "Resource.@localid"
 """ string: location of the PID in the document, specified as dot notation
 """
+
+AUTO_SET_PID = True
+""" boolean: enable the automatic pid generation for saved data.
+"""
