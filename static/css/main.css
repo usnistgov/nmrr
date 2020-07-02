@@ -2417,8 +2417,11 @@
 				}
 
 				#nav > ul > li:hover a {
+					color: white;
+				}
+
+				#nav > ul > li:hover a.btn-custom {
 					color: black;
-					font-weight: 600;
 				}
 
 				#nav > ul > li.current {
@@ -2474,7 +2477,7 @@
 
 #nav > ul > li {
   text-align:center;
-  width: 110px;
+  /*width: 175px;*/ /* Removed by NIST */
 }
 
 #nav > ul > #cdcs-main > a {
@@ -2486,7 +2489,7 @@
   margin-top: -0.25em;
 }
 
-.cdcs-menu__item {
+.cdcs-menu-item {
   list-style: none;
 }
 
@@ -2528,8 +2531,8 @@
 			}
 
 			.dropotron > li:hover > a {
-                color: black;
-                font-weight: 600;
+                color: white;
+                /*font-weight: 600;*/ /* Removed by NIST */
             }
 
 		.dropotron.level-0 {
