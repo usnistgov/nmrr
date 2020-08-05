@@ -519,3 +519,6 @@ PID_XPATH = "Resource.@localid"
 AUTO_SET_PID = True
 """ boolean: enable the automatic pid generation for saved data.
 """
+ENABLE_XML_ENTITIES_TOOLTIPS = False
+""" boolean: enable the xml entities warning tooltip on the GUI.
+"""
