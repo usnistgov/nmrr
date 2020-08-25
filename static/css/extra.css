@@ -57,3 +57,8 @@
     color: red;
     margin-bottom: .1em;
 }
+
+#data-title { /* Remove data title from data page */
+    visibility: hidden;
+    height: 0em;
+}
