@@ -20,12 +20,12 @@
   1. **Suppporting Utilities:** The specific supporting utilities that are downloaded (i.e., redis, celery, mongo) - the install links for all those point to generic locations where you should just choose the ones appropriate to your platform.
 
   2. **Virtual Environment:** The specific python virtual environment may be varied, but it doesn't have to be.
-     1. That is, you can install `mkvirtualenv` on Linux or Mac. So, those commands should remain idential.
+     1. That is, you can install `Anaconda` on Windows, Linux or Mac. So, those commands should remain identical.
      2. If you decide to use a different one, just substitute any desired python virtual environment application and the instructions inside of it should remain the same.
      3. If you use an alternative application for creating and using python virtual environments, then merely use the appropriate equivalent commands for each command involving the python virtual environment.
      4. Mostly, the commands used for the python virtual environment have to do with:
-       1. creating it (`mkvirtualenv`),
-       2. activating it (`workon <nmrr_virtual_environment_name>`),
+       1. creating it (`conda create`),
+       2. activating it (`conda activate <nmrr_virtual_environment_name>`),
        3. deactivating it (`deactivate <nmrr_virtual_environment_name>`).
          * NOTE: Corresponding commands for related utilities often use very similar or identical commands.
 
@@ -59,7 +59,7 @@
 | NMRR application port number               | 8000                                         |
 | NMRR virtual environment name              | nmrr-2.0_env                            |
 | NMRR Superuser username                    | mgi_superuser                                |
-| NMRR Superuser email                       | user_email@institution.com                   |
+| NMRR Superuser email                       | user_email@example.com                   |
 | NMRR Superuser password                    | mgi_superuser_pwd                            |
 | MongoDB administrative username            | mdb_admin_user                               |
 | MongoDB administrative password            | mdb_admin_pwd                                |
@@ -84,7 +84,7 @@
 | MongoDB administrative password            | `<mongodb_admin_password>`                   |
 | MongoDB non-administrative username        | `<mongodb_nonadmin_username>`                |
 | MongoDB non-administrative password        | `<mongodb_nonadmin_password>`	            |
-| Redis configuration file                   | `<redis_configuratiaon_filename>`	        |
+| Redis configuration file                   | `<redis_configuration_filename>`	            |
 
 ### Assumptions
 
@@ -133,28 +133,30 @@
 $ cmd.exe
 ```
 
-#### Install mkvirtualenv
+#### Install Anaconda
+
 
 * NOTE: This enables you to install the NMRR software in Python virtual environments.
 
-* Command:
+- Download and Install [Anaconda](https://www.anaconda.com/distribution/) for the Python 3.x distribution
+- Start the Anaconda Navigator and:
+   - click on "Environment",
+   - then click on "base (root)",
+   - and "Open Terminal".
+
+
+* Then run the following commands:
 ```
-$ pip install virtualenvwrapper
-$ mkdir <install_path>\
-$ cd <install_path>\
-$ mkvirtualenv <nmrr_virtual_environment_name>
+$(base) conda create -n <nmrr_virtual_environment_name> python=<python_version>
+$(base) conda activate <nmrr_virtual_environment_name>
 ```
 * Example:
 ```
-$ pip install virtualenvwrapper
-$ mkdir c:\nmrr-2.0\
-$ cd c:\nmrr-2.0\
-$ mkvirtualenv nmrr-2.0_env
+$(base) conda create -n nmrr_env python=3.6.8
+$(base) conda activate nmrr_env
+$(nmrr_env)
 ```
 
-* NOTE: This __mkvirtualenv__ command:
-	* Creates a new __Python virtual environment__: __nmrr-2.0_env__.
-	* Automatically puts you into the virtual-environment after creating it.
 
 #### Install the latest version of pip installation utility inside the newly-created virtual-environment.
 
@@ -238,12 +240,12 @@ $ cmd.exe
 
 * Command:
 ```
-$ workon <nmrr_virtual_environment_name>
+$ conda activate <nmrr_virtual_environment_name>
 $$ cd <install_path>\nmrr-master\
 ```
 * Example:
 ```
-$ workon nmrr-2.0_env
+$ conda activate nmrr_env
 $$ cd <install_path>\nmrr-master\
 ```
 
@@ -358,7 +360,7 @@ $$ mongo --port 27017 -u "mdb_admin_user" -p "mdb_admin_pwd" --authenticationDat
 
 * Command:
 ```
-$$ redis-server <redis_configuratiaon_filename>
+$$ redis-server <redis_configuration_filename>
 ```
 
 * Example:
@@ -395,7 +397,9 @@ $$ celery -A nmrr worker -l info -Ofair --purge
 
 ```
 $ cd <install_path>\nmrr-master\
-$ workon nmrr-2.0_env
+$ conda activate nmrr_env
+
+
 $$ python manage.py migrate auth
 $$ python manage.py migrate
 $$ python manage.py collectstatic --noinput
@@ -422,7 +426,7 @@ $$ python manage.py createsuperuser
 * Example:
 	* When prompted, fill in the following info:
 		* username      : mgi_superuser
-		* email         : user_email@institution.com
+		* email         : user_email@example.com
 		* password (x2) : mgi_superuser_pwd
 
 #### Run the system.
