@@ -41,10 +41,10 @@ def tiles(request):
         add_local_data_source(request, query)
 
         # set visibility
-        query_api.set_visibility_to_query(query)
+        query_api.set_visibility_to_query(query, request.user)
 
         # upsert the query
-        query_api.upsert(query)
+        query_api.upsert(query, request.user)
 
         # add information in context to populate keyword form
         context.update(
