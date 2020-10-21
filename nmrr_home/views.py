@@ -2,6 +2,7 @@ import logging
 
 from django.shortcuts import render
 
+from core_main_app.access_control.exceptions import AccessControlError
 from nmrr.settings import DATA_SORTING_FIELDS
 
 logger = logging.getLogger(__name__)
@@ -34,26 +35,31 @@ def tiles(request):
         )
         from core_main_app.commons import exceptions as exceptions
 
-        # create Query
-        query = Query(user_id=str(request.user.id), templates=[])
+        try:
+            # create Query
+            query = Query(user_id=str(request.user.id), templates=[])
 
-        # add local data source to the query
-        add_local_data_source(request, query)
+            # add local data source to the query
+            add_local_data_source(request, query)
 
-        # set visibility
-        query_api.set_visibility_to_query(query, request.user)
+            # set visibility
+            query_api.set_visibility_to_query(query, request.user)
 
-        # upsert the query
-        query_api.upsert(query, request.user)
+            # upsert the query
+            query_api.upsert(query, request.user)
 
-        # add information in context to populate keyword form
-        context.update(
-            {
-                "query_id": str(query.id),
-                "user_id": query.user_id,
-                "order_by_field": ",".join(DATA_SORTING_FIELDS),
-            }
-        )
+            # add information in context to populate keyword form
+            context.update(
+                {
+                    "query_id": str(query.id),
+                    "user_id": query.user_id,
+                    "order_by_field": ",".join(DATA_SORTING_FIELDS),
+                }
+            )
+        except AccessControlError as ace:
+            logger.error(
+                "Error while initializing the homepage query: {0}".format(str(ace))
+            )
 
         try:
             # Get current template
