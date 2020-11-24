@@ -63,7 +63,9 @@ def tiles(request):
 
         try:
             # Get current template
-            template = template_registry_api.get_current_registry_template()
+            template = template_registry_api.get_current_registry_template(
+                request=request
+            )
             # Get type refinement
             refinement = refinement_api.get_by_template_hash_and_by_slug(
                 template_hash=template.hash, slug="type"
@@ -78,9 +80,9 @@ def tiles(request):
                 category_api.get_all_categories_ids_from_name_and_refinement_id
             )
 
-            custom_resources = (
-                custom_resource_api.get_all_of_current_template().order_by("sort")
-            )
+            custom_resources = custom_resource_api.get_all_of_current_template(
+                request=request
+            ).order_by("sort")
 
             for custom_resource in custom_resources:
                 if (
