@@ -425,26 +425,12 @@ $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 * NOTES:
 	* When redis-server starts, it will create a background process and will return to the command terminal prompt, allowing one to reuse that terminal to run other commands
 
-#### **(ON WINDOWS ONLY)** Remove incompatibility with celery 4.x.
-
-```
-$$ pip uninstall celery
-```
-
-_Proceed (y/n)? y_
-
-```
-$$ pip install celery==3.1.18
-```
-
-* NOTES:
-	* In some cases, it appears that Celery 4.x is incompatible with Windows. Thus, Windows users are asked to downgrade their Celery to an earlier version in order for it to work on Windows.
-	* However, non-Windows users should be able to skip this step and use Celery 4.x as is.
 
 #### Start celery.
 
 ```
-$$ celery -A nmrr worker -l info -Ofair --purge
+$$ celery --app=nmrr worker -E -l info
+$$ celery --app=nmrr beat -l info
 ```
 
 ###	5. Open terminal window #3 and perform the last set of installation commands.
@@ -528,7 +514,8 @@ $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 	* When redis-server starts, it will create a background process and will return to the command terminal prompt, allowing one to reuse that terminal to run other commands
 
 ```
-$$ celery -A nmrr worker -l info -Ofair --purge
+$$ celery --app=nmrr worker -E -l info
+$$ celery --app=nmrr beat -l info
 ```
 
 #### in terminal window #3
