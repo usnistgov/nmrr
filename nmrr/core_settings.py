@@ -153,3 +153,7 @@ ENABLE_XML_ENTITIES_TOOLTIPS = False
 OAI_ENABLE_HARVESTING = True
 """ boolean: Enable OAI-PMH harvesting by default.
 """
+
+ENABLE_SAML2_SSO_AUTH = os.getenv("ENABLE_SAML2_SSO_AUTH", "False").lower() == "true"
+""" boolean: enable SAML2 SSO authentication.
+"""
