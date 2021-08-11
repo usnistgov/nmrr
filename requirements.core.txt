@@ -10,4 +10,4 @@ core-module-local-id-registry-app==1.16.*
 core-module-status-registry-app==1.16.*
 core-module-fancy-tree-registry-app==1.16.*
 core-module-text-area-app==1.16.*
-core_linked_records_app==1.0.0-beta7
+core_linked_records_app==1.0.0-beta8
