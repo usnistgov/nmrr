@@ -11,3 +11,4 @@ core-module-status-registry-app==1.17.*
 core-module-fancy-tree-registry-app==1.17.*
 core-module-text-area-app==1.17.*
 core_linked_records_app==1.0.*
+core-user-registration-app==1.0.*
