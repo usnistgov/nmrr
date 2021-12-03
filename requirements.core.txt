@@ -11,4 +11,3 @@ core-module-status-registry-app==2.0.0-alpha1
 core-module-fancy-tree-registry-app==2.0.0-alpha1
 core-module-text-area-app==2.0.0-alpha1
 core_linked_records_app==2.0.0-alpha1
-core-user-registration-app==2.0.0-alpha1
