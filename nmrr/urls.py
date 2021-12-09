@@ -28,7 +28,7 @@ urlpatterns = [
     re_path(r"^admin/defender/", include("defender.urls")),
     re_path(r"^", include("core_main_registry_app.urls")),
     re_path(r"^home/", include("nmrr_home.urls")),
-    # re_path(r"^", include("core_user_registration_app.urls")),
+    re_path(r"^", include("core_user_registration_app.urls")),
     re_path(r"^", include("core_website_app.urls")),
     re_path(r"^curate/", include("core_curate_registry_app.urls")),
     re_path(r"^parser/", include("core_parser_app.urls")),
