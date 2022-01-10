@@ -49,7 +49,7 @@ DATABASES = {
     }
 }
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MONGO_HOST = os.environ["MONGO_HOST"] if "MONGO_HOST" in os.environ else ""
 MONGO_PORT = os.environ["MONGO_PORT"] if "MONGO_PORT" in os.environ else "27017"
@@ -77,6 +77,7 @@ else:
     REDIS_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}"
 BROKER_URL = REDIS_URL
 CELERY_RESULT_BACKEND = REDIS_URL
+CELERYBEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 # Application definition
 
@@ -96,6 +97,7 @@ INSTALLED_APPS = (
     "tz_detect",
     "defender",
     "captcha",
+    "django_celery_beat",
     # Core apps
     "core_main_app",
     "core_main_registry_app",
