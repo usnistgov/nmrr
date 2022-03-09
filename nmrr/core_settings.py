@@ -158,7 +158,7 @@ ENABLE_SAML2_SSO_AUTH = os.getenv("ENABLE_SAML2_SSO_AUTH", "False").lower() == "
 """ boolean: enable SAML2 SSO authentication.
 """
 
-MONGODB_INDEXING = os.getenv("MONGODB_INDEXING", "False").lower() == "true"
+MONGODB_INDEXING = True
 """ :py:class:`bool`: Use MongoDB for data indexing.
     If True: 
         - a copy of the data will be stored in MongoDB,
