@@ -165,6 +165,10 @@ MONGODB_INDEXING = True
         - queries will be executed against MongoDB.
 """
 
+GRIDFS_STORAGE = True
+""" :py:class:`bool`: Use GridFS for file storage.
+"""
+
 MONGO_HOST = os.getenv("MONGO_HOST", "localhost")
 """ :py:class:`str`: MongoDB host.
 """
