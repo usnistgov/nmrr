@@ -84,27 +84,33 @@ DISPLAY_RULES_OF_BEHAVIOR_FOOTER = True
 """ boolean: display the rules of behavior link in the footer
 """
 
-ID_PROVIDER_SYSTEMS = {
-    "local": {
-        "class": "core_linked_records_app.utils.providers.local.LocalIdProvider",
-        "args": [],
-    },
-    # "handle": {
-    #     "class": "core_linked_records_app.utils.providers.handle_net.HandleNetSystem",
-    #     "args": [
-    #         "https://handle-server.example.org:8000",
-    #         "300%3APREFIX/USER",
-    #         "password",
-    #     ],
-    # },
-}
-""" dict: provider systems available for registering PIDs.
+ID_PROVIDER_SYSTEM_NAME = "local"
+""" str: internal name of the provider system.
 """
 
-ID_PROVIDER_PREFIXES = ["cdcs"]
-""" list<string>: accepted prefixes if manually specifying PIDs (first item is the
+ID_PROVIDER_SYSTEM_CONFIG = {
+    "class": "core_linked_records_app.utils.providers.local.LocalIdProvider",
+    "args": [],
+}
+""" dict: provider system configuration for resolving PIDs.
+"""
+
+ID_PROVIDER_PREFIXES = (
+    os.environ["ID_PROVIDER_PREFIXES"].split(",")
+    if "ID_PROVIDER_PREFIXES" in os.environ
+    else ["cdcs"]
+)
+""" list<str>: accepted providers if manually specifying PIDs (first item is the
 default prefix)
 """
+
+ID_PROVIDER_PREFIX_DEFAULT = os.getenv(
+    "ID_PROVIDER_PREFIX_DEFAULT", ID_PROVIDER_PREFIXES[0]
+)
+
+ID_PROVIDER_PREFIX_BLOB = os.getenv(
+    "ID_PROVIDER_PREFIX_BLOB", ID_PROVIDER_PREFIXES[0]
+)
 
 PID_XPATH = "Resource.@localid"
 """ string: location of the PID in the document, specified as dot notation
@@ -156,6 +162,10 @@ OAI_ENABLE_HARVESTING = True
 
 ENABLE_SAML2_SSO_AUTH = os.getenv("ENABLE_SAML2_SSO_AUTH", "False").lower() == "true"
 """ boolean: enable SAML2 SSO authentication.
+"""
+
+ENABLE_HANDLE_PID = os.getenv("ENABLE_HANDLE_PID", "False").lower() == "true"
+""" boolean: enable handle server PID support.
 """
 
 MONGODB_INDEXING = True
