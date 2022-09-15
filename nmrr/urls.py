@@ -16,10 +16,15 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import re_path
 
+from core_main_app.admin import core_admin_site
 from core_parser_app.tools.modules.discover import discover_modules
+
+admin.autodiscover()
+
 
 urlpatterns = [
     re_path(r"^admin/", admin.site.urls),
+    re_path(r"^core-admin/", core_admin_site.urls),
     re_path(r"^admin/defender/", include("defender.urls")),
     re_path(r"^", include("core_main_registry_app.urls")),
     re_path(r"^home/", include("nmrr_home.urls")),
