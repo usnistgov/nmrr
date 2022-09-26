@@ -21,12 +21,20 @@ def tiles(request):
     context = {"tiles": []}
 
     if "core_explore_keyword_registry_app" in installed_apps:
-        from core_explore_keyword_registry_app.views.user.forms import RefinementForm
+        from core_explore_keyword_registry_app.views.user.forms import (
+            RefinementForm,
+        )
         from core_explore_common_app.components.query import api as query_api
         from core_explore_common_app.components.query.models import Query
-        from core_explore_common_app.views.user.ajax import add_local_data_source
-        from core_main_registry_app.components.refinement import api as refinement_api
-        from core_main_registry_app.components.category import api as category_api
+        from core_explore_common_app.views.user.ajax import (
+            add_local_data_source,
+        )
+        from core_main_registry_app.components.refinement import (
+            api as refinement_api,
+        )
+        from core_main_registry_app.components.category import (
+            api as category_api,
+        )
         from core_main_registry_app.components.template import (
             api as template_registry_api,
         )
@@ -58,7 +66,9 @@ def tiles(request):
             )
         except AccessControlError as ace:
             logger.error(
-                "Error while initializing the homepage query: {0}".format(str(ace))
+                "Error while initializing the homepage query: {0}".format(
+                    str(ace)
+                )
             )
 
         try:
@@ -93,7 +103,8 @@ def tiles(request):
                         "logo": custom_resource.icon,
                         "color": custom_resource.icon_color,
                         "categories": get_categories(
-                            custom_resource.role_type.split(":")[0], refinement.id
+                            custom_resource.role_type.split(":")[0],
+                            refinement.id,
                         ),
                         "title": custom_resource.title,
                         "text": "Click here to explore the {0}.".format(
@@ -104,7 +115,9 @@ def tiles(request):
 
         except (exceptions.DoesNotExist, exceptions.ModelError) as e:
             logger.error(
-                "Error while getting information from the database: {0}".format(str(e))
+                "Error while getting information from the database: {0}".format(
+                    str(e)
+                )
             )
         except Exception as ex:
             logger.error(

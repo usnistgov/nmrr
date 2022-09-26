@@ -15,9 +15,11 @@ Menu.add_item(
 )
 
 Menu.add_item(
-    "help", MenuItem("Contact", reverse("core_website_app_contact"), icon="envelope")
+    "help",
+    MenuItem("Contact", reverse("core_website_app_contact"), icon="envelope"),
 )
 
 Menu.add_item(
-    "help", MenuItem("Help", reverse("core_website_app_help"), icon="question-circle")
+    "help",
+    MenuItem("Help", reverse("core_website_app_help"), icon="question-circle"),
 )

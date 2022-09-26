@@ -33,7 +33,9 @@ urlpatterns = [
     re_path(r"^curate/", include("core_curate_registry_app.urls")),
     re_path(r"^parser/", include("core_parser_app.urls")),
     re_path(r"^explore/common/", include("core_explore_common_app.urls")),
-    re_path(r"^explore/keyword/", include("core_explore_keyword_registry_app.urls")),
+    re_path(
+        r"^explore/keyword/", include("core_explore_keyword_registry_app.urls")
+    ),
     re_path(r"^oaipmh_search/", include("core_explore_oaipmh_app.urls")),
     re_path(r"^dashboard/", include("core_dashboard_registry_app.urls")),
     re_path(r"^oai_pmh/", include("core_oaipmh_harvester_app.urls")),
