@@ -76,7 +76,6 @@ INSTALLED_APPS = (
     # Extra apps
     "rest_framework",
     "drf_yasg",
-    "django_cleanup.apps.CleanupConfig",
     "menu",
     "tz_detect",
     "defender",
