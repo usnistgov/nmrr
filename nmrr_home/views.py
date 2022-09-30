@@ -1,9 +1,9 @@
 import logging
 
 from django.shortcuts import render
+from nmrr.settings import DATA_SORTING_FIELDS
 
 from core_main_app.access_control.exceptions import AccessControlError
-from nmrr.settings import DATA_SORTING_FIELDS
 
 logger = logging.getLogger(__name__)
 
