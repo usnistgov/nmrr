@@ -10,3 +10,5 @@ INSTALLED_APPS = [
     "core_main_app",
     "core_main_app.tests",
 ]
+MONGODB_INDEXING = False
+MONGODB_ASYNC_SAVE = False
