@@ -87,7 +87,7 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     # Extra apps
     "rest_framework",
-    "drf_yasg",
+    "drf_spectacular",
     "menu",
     "tz_detect",
     "defender",
