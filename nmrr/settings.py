@@ -133,6 +133,7 @@ MIDDLEWARE = (
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "core_main_app.middleware.timezone.TimezoneMiddleware",
 )
 
 TEMPLATES = [
@@ -163,7 +164,7 @@ WSGI_APPLICATION = "nmrr.wsgi.application"
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = os.getenv("TZ", "UTC")
 
 USE_I18N = True
 
