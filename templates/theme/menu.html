@@ -14,7 +14,7 @@
 
             {% for item in menus.main %}
                 <li {% if item == selected_menu %}class="current"{% endif %}>
-                    <a href="{{ item.url }}">{% if item|get_attribute:'icon' %}<i class="fas fa-{{ item.icon }}"></i>{%endif%}{{ item.title }}</a>
+                    <a href="{{ item.url }}">{% if item|get_attribute:'icon' %}<i class="fas fa-{{ item.icon }}"></i>{% endif %}{{ item.title }}</a>
                 </li>
             {% endfor %}
         {% endblock %}

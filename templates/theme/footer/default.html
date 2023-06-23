@@ -22,7 +22,7 @@
                 </li>
             </ul>
         </div>
-        <div class="px-1 col-md-6 col-sm-3 text-right">
+        <div class="px-1 col-md-6 col-sm-3 {% if BOOTSTRAP_VERSION == "4.6.2" %}text-right{% elif BOOTSTRAP_VERSION == "5.1.3" %}text-end{% endif %}">
             {% include 'core_website_app/user/footer_menu.html' %}
         </div>
   </div>
