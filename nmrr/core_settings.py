@@ -221,3 +221,7 @@ OAI_ADMINS = (
 GA_TRACKING_ID = os.getenv("GA_TRACKING_ID", None)
 """ :py:class:`str`: Google Analytics tracking ID. Adds gtag to user pages if set.
 """
+
+BOOTSTRAP_VERSION = os.getenv("BOOTSTRAP_VERSION", "5.1.3")
+""" :py:class:`str`: Version of the boostrap library.
+"""
