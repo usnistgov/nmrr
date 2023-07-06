@@ -46,6 +46,10 @@ XSD_URI_RESOLVER = None
 """ :py:class:`str`: XSD URI Resolver for lxml validation. Choose from:  None, 'REQUESTS_RESOLVER'.
 """
 
+AUTO_ESCAPE_XML_ENTITIES = True
+""" boolean: Automatically escape XML entities.
+"""
+
 DISPLAY_EDIT_BUTTON = False
 """ boolean: Display the edit button on the result page
 """
