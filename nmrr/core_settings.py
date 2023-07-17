@@ -226,6 +226,10 @@ GA_TRACKING_ID = os.getenv("GA_TRACKING_ID", None)
 """ :py:class:`str`: Google Analytics tracking ID. Adds gtag to user pages if set.
 """
 
+ENABLE_XML_ENTITIES_TOOLTIPS = True
+""" :py:class:`bool`: Enable XML entities tooltips during curation.
+"""
+
 BOOTSTRAP_VERSION = os.getenv("BOOTSTRAP_VERSION", "5.1.3")
 """ :py:class:`str`: Version of the boostrap library.
 """
