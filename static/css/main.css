@@ -2416,10 +2416,14 @@
 					margin-left: 0;
 				}
 
-				#nav > ul > li:hover a {
+				#nav > ul > li:hover > a,
+				#nav > ul > li:hover > div > a,
+				#nav > ul > li a.btn-custom {
 					color: white;
 				}
 
+				#nav > ul > li > a,
+				#nav > ul > li > div > a,
 				#nav > ul > li:hover a.btn-custom {
 					color: black;
 				}
@@ -2477,7 +2481,6 @@
 
 #nav > ul > li {
   text-align:center;
-  /*width: 175px;*/ /* Removed by NIST */
 }
 
 #nav > ul > #cdcs-main > a {
@@ -2496,8 +2499,8 @@
 
 /* Dropotron */
 
-	.dropotron {
-		background-color: #a5d1ed;/*#333;*/
+	#nav .dropdown-menu {
+		background-color: #a5d1ed;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("../img/bg01.png");
@@ -2506,16 +2509,16 @@
 		color: #fff;
 		min-width: 10em;
 		padding: 1em 0;
-		/*text-align: center;*/
 		box-shadow: 0 1em 1em 0 rgba(0, 0, 0, 0.5);
 	}
 
-		.dropotron > li {
+		#nav .dropdown-menu > li {
+			padding: 0 1.5rem 0.1rem 0.5rem;
 			line-height: 2em;
-			/*padding: 0 1.1em 0 1em;*/
 		}
 
-			.dropotron > li > a {
+			#nav .dropdown-menu > li > a,
+			#nav .dropdown-menu > li > div > a {
 				color: black;
 				text-decoration: none;
 				border: 0;
@@ -2523,24 +2526,13 @@
 			    padding: 0 0.5em;
 			}
 
-			.dropotron > li.active > a {
+			#nav .dropdown-menu > li.active > a,
+			#nav .dropdown-menu > li.active > div > a {
 				color: black;
 				/* Added by NIST */
 				background-color: var(--main-highlight-color);
                 border-radius: 5px;
 			}
-
-			.dropotron > li:hover > a {
-                color: white;
-                /*font-weight: 600;*/ /* Removed by NIST */
-            }
-
-		.dropotron.level-0 {
-			border-radius: 0 0 5px 5px;
-			font-size: 0.9em;
-			padding-top: 0;
-			margin-top: -1px;
-		}
 
 /* Banner */
 
