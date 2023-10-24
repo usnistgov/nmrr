@@ -180,6 +180,18 @@ ENABLE_HANDLE_PID = os.getenv("ENABLE_HANDLE_PID", "False").lower() == "true"
 """ boolean: enable handle server PID support.
 """
 
+ENABLE_BLOB_ENDPOINTS = (
+    os.getenv("ENABLE_BLOB_ENDPOINTS", "False").lower() == "true"
+)
+""" bool: Enable blob api and user views for blob management.
+"""
+
+ALLOW_MULTIPLE_SCHEMAS = (
+    os.getenv("ALLOW_MULTIPLE_SCHEMAS", "False").lower() == "true"
+)
+""" bool: Enable the use of multiple schemas in the registry.
+"""
+
 MONGODB_INDEXING = True
 """ :py:class:`bool`: Use MongoDB for data indexing.
     If True:
