@@ -1,13 +1,12 @@
-# NMRR 2.0 Installation Process
-10/11/2018
+# NMRR 3.x Installation Process
 
 ## INTRODUCTION
 
-* This document describes a step by step installation process for installing NMRR 2.0 using familiar `pip install` processes through the Python Packaging Index (PyPI).
+* This document describes a step by step installation process for installing NMRR 3.x using familiar `pip install` processes through the Python Packaging Index (PyPI).
 
-* These instructions support the manual installation process for NMRR software version 2.0 (a.k.a., __nmrr__ located at https://github.com/usnistgov/nnmrr ).
+* These instructions support the manual installation process for NMRR software version 3.x (a.k.a., __nmrr__ located at https://github.com/usnistgov/nmrr).
 
-* More information about the Configurable Data Curation System (CDCS) of modular applications exists in the form of a [system manual](https://cdcs.nist.gov/cdcs-documentation/index.html) at http://cdcs.nist.gov .
+* More information about the Configurable Data Curation System (CDCS) of modular applications exists in the form of a [system manual](https://cdcs.nist.gov/cdcs-documentation/index.html) at http://cdcs.nist.gov.
 
 ## Notes for Particular Installation Platforms
 
@@ -20,13 +19,13 @@
   1. **Supporting Utilities:** The specific supporting utilities that are downloaded (i.e., redis, celery, mongo) - the install links for all those point to generic locations where you should just choose the ones appropriate to your platform.
 
   2. **Virtual Environment:** The specific python virtual environment may be varied, but it doesn't have to be.
-     1. That is, you can install `Anaconda` on Windows, Linux or Mac. So, those commands should remain identical.
+     1. That is, you can install `Pyenv` on Windows, Linux or Mac. So, those commands should remain identical.
      2. If you decide to use a different one, just substitute any desired python virtual environment application and the instructions inside of it should remain the same.
      3. If you use an alternative application for creating and using python virtual environments, then merely use the appropriate equivalent commands for each command involving the python virtual environment.
      4. Mostly, the commands used for the python virtual environment have to do with:
-       1. creating it (`conda create`),
-       2. activating it (`conda activate <nmrr_virtual_environment_name>`),
-       3. deactivating it (`deactivate <nmrr_virtual_environment_name>`).
+       1. creating it (`pyenv virtualenv`),
+       2. activating it (`pyenv activate <nmrr_virtual_environment_name>`),
+       3. deactivating it (`pyenv deactivate`).
          * NOTE: Corresponding commands for related utilities often use very similar or identical commands.
 
   3. **Command Shell:** The commands executed in this installation occur in a windows command shell, in the case of Linux or Mac, they would be in the standard scripting shell (which is usually some kind of bash variant).
@@ -36,7 +35,6 @@
   5. **Skip Windows-Only Step:** There's a step in the Windows install process that is Windows-specific, toward the end, where a given package (celery) needed to be updated (uninstalled/reinstalled) for a slightly different version because of a well-known Windows-specific bug/dependency in that community-library. That step is labeled as "Windows-only". So, just skip that step when installing for Linux or Mac.
 
 * Other than the above cases, the rest of the process should be able to be executed as is.
-
 
 
 ### Parameter Values
@@ -54,10 +52,10 @@
 | Installation Parameter                     | Example Installation Parameter Value |
 | :------------------------------------------| :-------------------------------------------:|
 | NMRR application installation platform     | Windows operating system                     |
-| NMRR application installation path         | c:\nmrr-2.0                             |
+| NMRR application installation path         | c:\nmrr                             |
 | NMRR application IP address                | 127.0.0.1                                    |
 | NMRR application port number               | 8000                                         |
-| NMRR virtual environment name              | nmrr-2.0_env                            |
+| NMRR virtual environment name              | nmrr_env                            |
 | NMRR Superuser username                    | mgi_superuser                                |
 | NMRR Superuser email                       | user_email@example.com                   |
 | NMRR Superuser password                    | mgi_superuser_pwd                            |
@@ -111,11 +109,11 @@
 
 ###	1. Install supporting applications on your host system.
 
-* Python 3.6.8: https://www.anaconda.com/distribution/ (choose python 3.x)
-* MongoDB 4.4: https://www.mongodb.com/download-center#community
-* Redis 5.0: https://redis.io/download
+* Python 3.8: https://www.python.org/downloads/release/python-380/ (NOTE: this will be installed via a virtual environment)
+* MongoDB 6.0: https://www.mongodb.com/download-center#community
+* Redis 7.0: https://redis.io/download
 * Celery    : NOTE: This is installed below via `pip install`.
-* gettext   : This utility is necessary for supporting internationalization in NMRR 2.0 systems >= NMRR 2.0 beta1.
+* gettext   : This utility is necessary for supporting internationalization in NMRR 3.x systems.
     - On Linux,
       - $$ `apt-get install gettext`
     -On Windows,
@@ -129,34 +127,37 @@
 
 #### Open a terminal window.
 
-```
+```shell
 $ cmd.exe
 ```
 
-#### Install Anaconda
+#### Install Pyenv
 
 
 * NOTE: This enables you to install the NMRR software in Python virtual environments.
 
-- Download and Install [Anaconda](https://www.anaconda.com/distribution/) for the Python 3.x distribution
-- Start the Anaconda Navigator and:
-   - click on "Environment",
-   - then click on "base (root)",
-   - and "Open Terminal".
+- Download and install [Pyenv](https://github.com/pyenv/pyenv#installation) and 
+[Pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv#installation)
+  
+* Install a version of Python supported by the CDCS (see `python_requires` in [setup.py](https://github.com/usnistgov/core_main_app/blob/master/setup.py)):
 
+```shell
+$ pyenv install 3.8
+```
 
 * Then run the following commands:
-```
-$(base) conda create -n <nmrr_virtual_environment_name> python=<python_version>
-$(base) conda activate <nmrr_virtual_environment_name>
-```
-* Example:
-```
-$(base) conda create -n nmrr_env python=3.6.8
-$(base) conda activate nmrr_env
-$(nmrr_env)
+```shell
+$(base) pyenv virtualenv 3.8 <nmrr_virtual_environment_name>
+$(base) pyenv activate <nmrr_virtual_environment_name>
 ```
 
+* Example:
+```shell
+$(base) pyenv install 3.8
+$(base) pyenv virtualenv 3.8 nmrr_env
+$(base) pyenv activate nmrr_env
+$(nmrr_env) 
+```
 
 #### Install the latest version of pip installation utility inside the newly-created virtual-environment.
 
@@ -166,23 +167,23 @@ $$ python -m pip install --upgrade pip
 
 #### Download, extract, and configure nmrr from git repository.
 
-* Download https://github.com/usnistgov/nnmrr/archive/master.zip to the <install_path>\ directory.
+* Download https://github.com/usnistgov/nmrr/archive/master.zip to the <install_path>\ directory.
 * Extract nmrr-master.zip to form the following base installation directory: <install_path>\nmrr-master\ .
 * Then move into that base install directory.
 
-```
+```shell
 $$ cd nmrr-master
 ```
 
 #### Create configuration file directory for MongoDB.
 
-```
+```shell
 $$ mkdir conf
 ```
 
 #### Create data directory for MongoDB.
 
-```
+```shell
 $$ mkdir data\db
 ```
 
@@ -212,19 +213,18 @@ net:
 security:
    authorization: enabled
 storage:
-   dbPath: c:/nmrr-2.0/nmrr-master/data/db
+   dbPath: c:/nmrr/nmrr-master/data/db
 ```
 
 #### Install NMRR supporting and core software packages.
 
-```
+```shell
 $$ pip install --no-cache-dir -r requirements.txt
 $$ pip install --no-cache-dir -r requirements.core.txt
 ```
 
 #### Start MongoDB server.
-
-```
+```shell
 $$ mongod --config conf\mongodb.conf
 ```
 
@@ -232,20 +232,20 @@ $$ mongod --config conf\mongodb.conf
 
 #### Open terminal window.
 
-```
+```shell
 $ cmd.exe
 ```
 
 #### Open virtual environment and move to the release installation directory.
 
 * Command:
-```
-$ conda activate <nmrr_virtual_environment_name>
+```shell
+$ pyenv activate <nmrr_virtual_environment_name>
 $$ cd <install_path>\nmrr-master\
 ```
 * Example:
-```
-$ conda activate nmrr_env
+```shell
+$ pyenv activate nmrr_env
 $$ cd <install_path>\nmrr-master\
 ```
 
@@ -255,7 +255,7 @@ $$ cd <install_path>\nmrr-master\
 
 **NOTE:** Enter your own mongodb administrative username and password here. See the example below.
 
-```
+```shell
 $$ mongo --port 27017
 
 	use admin
@@ -271,7 +271,7 @@ $$ mongo --port 27017
 
 * Example:
 
-```
+```shell
 $$ mongo --port 27017
 
 	use admin
@@ -296,7 +296,7 @@ $$ mongo --port 27017
 
 	* Enter your own mongodb usernames and passwords for administrative and non-administrative accounts, respectively, here. Please see the example below.
 
-```
+```shell
 $$ mongo --port 27017 -u "<mongodb_admin_username>" -p "<mongodb_admin_password>" --authenticationDatabase admin
 	use mgi
 	db.createUser(
@@ -312,7 +312,7 @@ $$ mongo --port 27017 -u "<mongodb_admin_username>" -p "<mongodb_admin_password>
 
 * Example:
 
-```
+```shell
 $$ mongo --port 27017 -u "mdb_admin_user" -p "mdb_admin_pwd" --authenticationDatabase admin
 	use mgi
 	db.createUser(
@@ -375,20 +375,20 @@ MONGO_PASSWORD=mdb_pwd
 
 To run django commands, using a custom settings file, you can use the
 following syntax:
-```
+```shell
 python manage.py <command> --settings=<custom_settings>
 ```
 Example: start the server with development settings
-```
+```shell
 python manage.py runserver --settings=nmrr.dev_settings
 ```
 Or set the `DJANGO_SETTINGS_MODULE` environment variable:
-```
+```shell
 export DJANGO_SETTINGS_MODULE=<custom_settings>
 python manage.py <command>
 ```
 Example:
-```
+```shell
 export DJANGO_SETTINGS_MODULE=nmrr.dev_settings
 python manage.py runserver
 ```
@@ -410,16 +410,15 @@ the main settings file. Additional information about writing a
 settings file for production can be found here:
 https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-
 #### Start Redis server.
 
 * Command:
-```
+```shell
 $$ redis-server <redis_configuration_filename>
 ```
 
 * Example:
-```
+```shell
 $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 ```
 
@@ -429,33 +428,20 @@ $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 
 #### Start celery.
 
-```
+```shell
 $$ celery --app=nmrr worker -E -l info
 $$ celery --app=nmrr beat -l info
 ```
 
 ###	5. Open terminal window #3 and perform the last set of installation commands.
 
-```
+```shell
 $ cd <install_path>\nmrr-master\
-$ conda activate nmrr_env
+$ pyenv activate nmrr_env
 
-
-$$ python manage.py migrate auth
 $$ python manage.py migrate
 $$ python manage.py collectstatic --noinput
-
-* Ensure `gettext` utility is installed
-    - On Linux,
-      - $$ apt-get install gettext
-    -On Windows,
-	  - install gettext from https://mlocati.github.io/articles/gettext-iconv-windows.html
-
 $$ python manage.py compilemessages
-	  * NOTES:
-		- The `compilemessages` process requires the `gettext` utility.
-		- If you receive an error message, check previous step was successful.
-
 $$ python manage.py createsuperuser
 ```
 * Command:
@@ -473,12 +459,12 @@ $$ python manage.py createsuperuser
 #### Run the system.
 
 * Command:
-```
+```shell
 $$ python manage.py runserver <ip_address>:<port_number>
 ```
 
 * Example:
-```
+```shell
 $$ python manage.py runserver 127.0.0.1:8000
 ```
 
@@ -500,13 +486,13 @@ $$ python manage.py runserver 127.0.0.1:8000
 
 #### in terminal window #1
 
-```
+```shell
 $$ mongod --config conf\mongodb.conf
 ```
 
 #### in terminal window #2
 
-```
+```shell
 $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 ```
 
@@ -514,7 +500,7 @@ $$ redis-server "c:\Program Files\Redis\redis.windows.conf"
 	* The above is the syntax for a Window's Redis install. This may be different on other operating systems.
 	* When redis-server starts, it will create a background process and will return to the command terminal prompt, allowing one to reuse that terminal to run other commands
 
-```
+```shell
 $$ celery --app=nmrr worker -E -l info
 $$ celery --app=nmrr beat -l info
 ```
@@ -524,12 +510,12 @@ $$ celery --app=nmrr beat -l info
 #### Run the system.
 
 * Command:
-```
+```shell
 $$ python manage.py runserver <ip_address>:<port_number>
 ```
 
 * Example:
-```
+```shell
 $$ python manage.py runserver 127.0.0.1:8000
 ```
 
