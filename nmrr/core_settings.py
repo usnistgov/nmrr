@@ -245,3 +245,8 @@ ENABLE_XML_ENTITIES_TOOLTIPS = False
 BOOTSTRAP_VERSION = os.getenv("BOOTSTRAP_VERSION", "5.1.3")
 """ :py:class:`str`: Version of the boostrap library.
 """
+
+TEXT_EDITOR_LIBRARY = os.getenv("TEXT_EDITOR_LIBRARY", "Monaco")
+""" :py:class:`str`: Set to `Monaco` to enable use external text editor Monaco,`None` to use default text editor,
+or specify another external text editor to set it up.
+"""
