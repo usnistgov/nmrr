@@ -234,10 +234,6 @@ OAI_ADMINS = (
 """ :py:class:`list`: Email addresses of OAI-PMH Administrators.
 """
 
-GA_TRACKING_ID = os.getenv("GA_TRACKING_ID", None)
-""" :py:class:`str`: Google Analytics tracking ID. Adds gtag to user pages if set.
-"""
-
 ENABLE_XML_ENTITIES_TOOLTIPS = False
 """ :py:class:`bool`: Enable XML entities tooltips during curation.
 """
