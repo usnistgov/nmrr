@@ -1,5 +1,6 @@
 """ Views for NMRR home app
 """
+
 import logging
 
 from django.shortcuts import render
