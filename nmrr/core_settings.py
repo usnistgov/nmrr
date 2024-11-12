@@ -264,3 +264,23 @@ TEXT_EDITOR_LIBRARY = os.getenv("TEXT_EDITOR_LIBRARY", "Monaco")
 """ :py:class:`str`: Set to `Monaco` to enable use external text editor Monaco,`None` to use default text editor,
 or specify another external text editor to set it up.
 """
+
+ENABLE_JSON_SCHEMA_SUPPORT = (
+    os.getenv("ENABLE_JSON_SCHEMA_SUPPORT", "False").lower() == "true"
+)
+""" :py:class:`bool`: Set to `True` to enable JSON Schema support.
+"""
+
+BACKWARD_COMPATIBILITY_DATA_XML_CONTENT = (
+    os.getenv("BACKWARD_COMPATIBILITY_DATA_XML_CONTENT", "True").lower()
+    == "true"
+)
+""" :py:class:`bool`: Set to `True` to continue using Data.xml_content (deprecated)
+    instead of Data.content in the REST API.
+"""
+
+ALLOW_MULTIPLE_SCHEMAS = (
+    os.getenv("ALLOW_MULTIPLE_SCHEMAS", "False").lower() == "true"
+)
+""" bool: Enable the use of multiple schemas in the registry.
+"""
