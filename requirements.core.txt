@@ -1,3 +1,4 @@
+core_main_app[mongodb,auth,allauth]==2.12.*
 core-main-registry-app==2.12.*
 core-curate-registry-app==2.12.*
 core-dashboard-registry-app==2.12.*
