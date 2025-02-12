@@ -284,3 +284,7 @@ ALLOW_MULTIPLE_SCHEMAS = (
 )
 """ bool: Enable the use of multiple schemas in the registry.
 """
+
+ADMIN_URLS_PREFIX = os.getenv("ADMIN_URLS_PREFIX", "staff-")
+""" :py:class:`str`: Prefix added to admin urls.
+"""
