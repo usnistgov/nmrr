@@ -123,7 +123,7 @@ ID_PROVIDER_PREFIX_BLOB = os.getenv(
     "ID_PROVIDER_PREFIX_BLOB", ID_PROVIDER_PREFIXES[0]
 )
 
-PID_XPATH = "Resource.@localid"
+PID_PATH = "Resource.@localid"
 """ string: location of the PID in the document, specified as dot notation
 """
 
