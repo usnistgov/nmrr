@@ -1,5 +1,4 @@
-""" Views for NMRR home app
-"""
+"""Views for NMRR home app"""
 
 import logging
 

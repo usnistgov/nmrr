@@ -1,5 +1,4 @@
-"""nmrr URL Configuration
-"""
+"""nmrr URL Configuration"""
 
 from django.urls import re_path
 

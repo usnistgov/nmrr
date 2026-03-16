@@ -1,10 +1,10 @@
-""" Menu configuration for nmrr.
+"""Menu configuration for nmrr.
 
-  * Help menu
+* Help menu
 
-    * API Documentation
-    * Contact
-    * Help
+  * API Documentation
+  * Contact
+  * Help
 """
 
 from django.urls import reverse
