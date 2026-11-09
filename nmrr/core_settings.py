@@ -29,7 +29,7 @@ SEARCHABLE_DATA_OCCURRENCES_LIMIT = None
 """ integer: Avoid indexing large lists
 """
 
-PARSER_DOWNLOAD_DEPENDENCIES = True
+PARSER_DOWNLOAD_DEPENDENCIES = False
 """ boolean: Does the parser download dependencies
 """
 
